@@ -1,4 +1,4 @@
-﻿@model User
+﻿@model AC_BM.ViewModels.UserVM
 
 @{
     ViewData["Title"] = "AddAdmin";
@@ -8,6 +8,7 @@
 <h1>AddAdmin</h1>
 <div class="col-6 ">
     <form method="post"  asp-action="AddAdmin" asp-controller="Admin">
+        <span class="bg-warning"></span>
         <div asp-validation-summary="All"></div>
         <div class="mb-3">
             <label asp-for="Email" class="form-label"></label>

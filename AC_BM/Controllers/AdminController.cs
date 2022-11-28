@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography;
 using System.Security;
+using AC_BM.ViewModels;
 
 namespace AC_BM.Controllers
 {
@@ -51,38 +52,30 @@ namespace AC_BM.Controllers
             
             return View();
         }
+
         [HttpPost]
         public IActionResult AddAdmin(User user)
-
-
         {
-            
+            var userModel = new User();
+            var model = new UserVM();
             var us = _db.Users.Where(u => u.Email == user.Email).FirstOrDefault();
-            if (us != null)
+            if (us == null)
             {
-                if ((us.Email !=null) && (user.Email !=null))
-                {
-                    if (us.Email.ToLower() == user.Email.ToLower())
-                    {
-                        ViewBag.error("the user already exists");
-                    }
-                    else
-                    {
-                        User usr = new User();
-                        usr.Name = user.Name;
-                        usr.Email = user.Email;
-                        usr.Contact = user.Contact;
-                        usr.Usertype = "admin";
-                        usr.Password = (user.Password);
-                        _db.Users.Add(usr);
-                        _db.SaveChanges();
-                        return RedirectToAction("Index");
+                //register user
+                userModel.Email = user.Email;
+                userModel.Password = user.Password;
+                userModel.Usertype = "admin";
 
-
-                    }
-                }
+                _db.Users.Add(userModel);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
             }
-            return View();
+            else
+            {
+                //user already exists
+                model.ErroMessage = $"User " + user.Email +"already Exists";
+                return View(model);
+            }
         }
 
 
