@@ -1,5 +1,6 @@
-﻿using AC_BM.Data;
-using AC_BM.Models;
+﻿
+using AC_BM.Models.Domain;
+using AC_BM.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AC_BM.Controllers
@@ -7,60 +8,71 @@ namespace AC_BM.Controllers
     public class UserController : Controller
     {
 
-        private readonly IHttpContextAccessor _contextAccessor;
-        private readonly ApplicationDBContext _db;
+        //private readonly IHttpContextAccessor _contextAccessor;
+        //private readonly ApplicationDBContext _db;
 
-        public UserController(ApplicationDBContext db, IHttpContextAccessor httpContextAccessor)
-        {
-            _contextAccessor = httpContextAccessor;
-            _db = db;
-        }
-        public IActionResult Index()
-        {
-            return View();
-        }
-        [HttpGet]
-        public IActionResult SignUp()
-        {
-            //var result = _db.Users.Where(email == email).SingleorDefault();
-            return View();
-        }
+        //public UserController(ApplicationDBContext db, IHttpContextAccessor httpContextAccessor)
+        //{
+        //    _contextAccessor = httpContextAccessor;
+        //    _db = db;
+        //}
+        //[HttpGet]
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
+        ////public IActionResult Index()
+        ////{
+        ////    return View();
+        ////}
+        //[HttpGet]
+        //public IActionResult SignUp()
+        //{
+        //    //var result = _db.Users.Where(email == email).FirstOrDefault();
+        //    return View();
+        //}
 
         //[HttpPost]
         //public IActionResult SignUp(User user)
         //{
         //    {
-        //        if (user.Name == null && user.Password == null)
+        //        var userModel = new User();
+        //        var model = new UserVM();
+        //        var us = _db.Users.Where(u => u.Email == user.Email).FirstOrDefault();
+        //        if (us == null)
         //        {
-        //            ModelState.AddModelError("name", "Name and password field cannot be null");
-        //        }
-        //        var us = _db.Users.Where(u => u.Email == user.Email).SingleOrDefault();
-        //        if (!us.Equals(user))
-        //        {
-        //            ViewBag.error("the user already exists");
+        //            //register user
+        //            userModel.Email = user.Email;
+        //            userModel.Password = user.Password;
+        //            userModel.Usertype = "Client";
+        //            _db.Users.Add(userModel);
+        //            _db.SaveChanges();
+        //            return RedirectToAction("Index");
         //        }
         //        else
         //        {
-        //            User usr = new User();
-        //            usr.Name = user.Name;
-        //            usr.Email = user.Email;
-        //            usr.Contact = user.Contact;
-        //            usr.Usertype = "admin";
-        //            usr.Password = (user.Password);
-        //            _db.Users.Add(usr);
-        //            _db.SaveChanges();
-        //            return RedirectToAction("Index");
+        //            //user already exists
+        //            model.ErroMessage = $"User " + user.Email + "already Exists";
+        //            return View(model);
 
         //        }
         //    }
-
+        //}
+        //[HttpGet]
+        //public IActionResult Login()
+        //{
         //    return View();
         //}
 
+        ////[HttpPost]
+        ////public IActionResult Login()
+        ////{
+        ////    return View();
+        ////}
 
-        //var result = _db.Users.Where(email == email).SingleorDefault();
 
-    
 
-    }
-}
+
+
+
+    } }

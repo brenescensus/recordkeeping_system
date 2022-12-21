@@ -1,0 +1,57 @@
+﻿@model AC_BM.Models.DTO.RegistrationModel;
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <meta name="viewport" content="width=device-width" />
+    <h1>Registration</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form method="post">
+            <div class" form-group">
+            <label asp-for="Name" class="form-label"></label>
+            <div><i class="bi bi-envelope"></i></div>
+            <input asp-for="Name" class="form-control" type="text" />
+            <span asp-validation-for="Name"class="text-danger"></span>
+           </div>
+                    <div class" form-group">
+                        <label asp-for="Username" class="form-label"></label>
+                        <div><i class="bi bi-envelope"></i></div>
+                        <input asp-for="Username" class="form-control" type="text" />
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+                    <div class" form-group">
+                        <label asp-for="Email" class="form-label"></label>
+                        <div><i class="bi bi-envelope"></i></div>
+                        <input asp-for="Email" class="form-control" type="email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class" form-group">
+                        <label asp-for="Password" class="form-label"></label>
+                        <div><i class="bi bi-envelope"></i></div>
+                        <input asp-for="Password" class="form-control" type="password" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class" form-group">
+                        <label asp-for="PasswordConfirm" class="form-label"></label>
+                        <div><i class="bi bi-envelope"></i></div>
+                        <input asp-for="PasswordConfirm" class="form-control" type="password" />
+                        <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
+                    </div>
+                   @if(TempData["msg"]!=null){
+                   <div class="text-success">
+                     @TempData["msg"]
+                   </div>
+                                               }
+                   <button class="btn btn-primary" type="submit" asp-controller="UserAunthentication" asp-action="Registration"> &nbsp;Register </button>
+                  <a asp-action="Login" asp-controller="UserAunthentication" class="btn btn-danger" >Login</a>
+
+                </form>
+            </div>
+        </div>
+    </div>
+

@@ -1,0 +1,69 @@
+﻿@model AC_BM.Models.Domain.User;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <meta name="viewport" content="width=device-width" />
+    <h1>Enter Details</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+           <form method="post" enctype="multipart/form-data">
+            
+                    <div class=" form-group">
+                        <label asp-for="Name" class="form-label">Full Name</label>
+                        <input asp-for="Name" class="form-control" type="text" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class=" form-group">
+                        <label asp-for="Email" class="form-label"></label>
+                        <input asp-for="Email" class="form-control" type="email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class=" form-group">
+                        <label asp-for="Contact" class="form-label"></label>
+                        <input asp-for="Contact" class="form-control" type="number" />
+                        <span asp-validation-for="Contact" class="text-danger"></span>
+                    </div>
+                    <div class =" form-group">
+                        <label asp-for="Id_Passport" class="form-label">Id/Passport</label>
+                        <input asp-for="Id_Passport" class="form-control" type="number" />
+                        <span asp-validation-for="Id_Passport" class="text-danger"></span>
+                    </div>
+                <div class=" form-group">
+                    <label asp-for="Address" class="form-label"></label>
+                    <input asp-for="Address" class="form-control" type="text" />
+                    <span asp-validation-for="Id_Passport" class="text-danger"></span>
+                </div>
+               <div class" form-group">
+                        <label asp-for="Nationality" class="form-label"></label>
+                        <input asp-for="Nationality" class="form-control" type="text" />
+                        <span asp-validation-for="Nationality" class="text-danger"></span>
+                    </div>
+                <div class" form-group">
+                        <label asp-for="Dependence" class="form-label"></label>
+                        <div><i class="bi bi-envelope"></i></div>
+                        <input asp-for="Dependence" class="form-control" type="text" />
+                        <span asp-validation-for="Dependence" class="text-danger"></span>
+                    </div>
+                    <div class" form-group">
+                        <label asp-for="DocFile" class="form-label"></label>
+                        <input asp-for="DocFile" class="form-control" type="file" />
+                        <span asp-validation-for="DocFile" class="text-danger"></span>
+                    </div>
+
+
+
+                   @if(TempData["msg"]!=null){
+                   <div class="text-success">
+                     @TempData["msg"]
+                   </div>
+                                               }
+                   <button class="btn btn-primary" type="submit" asp-controller="Client" asp-action="Edit"> &nbsp;Add Details </button>
+                  <a asp-action="ClientList" asp-controller="Dashboard" class="btn btn-danger" >Back</a>
+
+                </form>
+            </div>
+        </div>
+    </div>
+

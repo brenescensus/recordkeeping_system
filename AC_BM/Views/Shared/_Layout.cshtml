@@ -1,10 +1,15 @@
-﻿<!DOCTYPE html>
+﻿@{
+    string username = User.Identity.Name;
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - AC_BM</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AC_BM.styles.css" asp-append-version="true" />
 </head>
@@ -20,24 +25,55 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                       
+                            <li class="nav-item">
+                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home"  asp-action="Privacy">Services</a>
+                            <a class="nav-link text-light  " asp-area="" asp-controller="UserAunthentication" asp-action="Registration">SignUp</a>
                         </li>
+                       @* <li class="nav-item">
+                            <a class="nav-link text-light  " asp-area="" asp-controller="UserAunthentication" asp-action="Registration">SignUp</a>
+                        </li>*@
+                        @if (User.IsInRole("Admin"))
+                        {
+                            @*<li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                                    Admin
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/Company/Add">Company</a></li>
+                                    <li><a class="dropdown-item" href="/Service/ServiceList">Service</a></li>
+                                    <li><a class="dropdown-item" href="/Transaction/TransactionList">Transaction</a></li>
+                                </ul>
+                            </li>*@
+                          <li class="nav-item">
+                                <a class="nav-link text-light" asp-area="" asp-controller="Admin" asp-action="Index">Admin</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link text-light" asp-area="" asp-controller="Company" asp-action="Add">Company</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link text-light" asp-area="" asp-controller="Service" asp-action="Add">Service</a>
+                            </li>
+                        }
+@*                    </ul>
+*@@*                    <ul class="navbar-nav flex-grow-1">
+*@                       
                         
-                    </ul>
-                    <ul class="navbar-nav d-flex justify-content-end">
-                        <li class="nav-item d-flex justify-content-end">
-                            <a class="nav-link text-light btn btn-outline-danger" asp-controller="User" asp-action="Login" asp-area="">SignIn</a>
-                        </li>
-                        <li class="nav-item d-flex justify-content-end">
-                            <a class="nav-link text-light btn btn-outline-danger"asp-controller="User" asp-action="SignUp" asp-area="">SignUp</a>
-                        </li>
+                            
+                        
+
+*                       @if (!string.IsNullOrEmpty(username))
+                        {
+                        <li class="nav-item">
+                                <a class="nav-link text-light" asp-area="" asp-controller="UserAunthentication" asp-action="Logout">Logout</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
+            
         </nav>
     </header>
     <div class="container-fluid">
@@ -48,8 +84,8 @@
 
     <footer class="border-top footer text-muted text-center">
         <div class="container">
-            &copy; 2022 - All rights Reserved- <a asp-area="" asp-controller="Home" asp-action="Privacy"></a>
-            </a>
+            &copy; 2022 - All rights Reserved- <a asp-area="" asp-controller="Home" asp-action="Index"></a>
+            
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -58,3 +94,4 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+ 

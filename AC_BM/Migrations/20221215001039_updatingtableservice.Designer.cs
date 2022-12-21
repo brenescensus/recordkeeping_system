@@ -4,6 +4,7 @@ using AC_BM.Models.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ACBM.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20221215001039_updatingtableservice")]
+    partial class updatingtableservice
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -158,30 +161,29 @@ namespace ACBM.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<double>("Amount")
-                        .HasColumnType("float");
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<double>("Governmentfee")
-                        .HasColumnType("float");
-
-                    b.Property<double>("Net_pay")
-                        .HasColumnType("float");
-
-                    b.Property<double>("Pay")
-                        .HasColumnType("float");
-
-                    b.Property<double>("Tax")
-                        .HasColumnType("float");
-
-                    b.Property<string>("TransactionName")
+                    b.Property<int?>("Governmentfee")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("int");
 
-                    b.Property<double>("facilityfee")
-                        .HasColumnType("float");
+                    b.Property<int?>("Net_pay")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Pay")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Tax")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("facilityfee")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -200,7 +202,6 @@ namespace ACBM.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Contact")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Dependence")
@@ -210,21 +211,19 @@ namespace ACBM.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Id_Passport")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nationality")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Profile")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<AC_BM.Models.Domain.Transaction>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div class="table-container">
+    <h1  > Company</h1>
+
+    <table class="table">
+    <tr>
+    <th>Transaction</th>
+    <th>Payment</th>
+        <th>Tax</th>
+    <th>NetPay</th>
+    <th>Facilityfee</th>
+    <th>Gov fee</th>
+     <th>Total</th>
+     <th>Date</th>
+    <th>Action</th>
+    </tr>
+    @foreach(var item in Model){
+     <tr>
+                <td>@item.TransactionName</td>
+                <td>@item.Pay</td>
+                <td>@item.Tax</td>
+                <td>@item.Net_pay</td>
+                <td>@item.facilityfee</td>
+                <td>@item.Governmentfee</td>
+                <td>@item.Amount</td>
+                <td>@item.Date</td>
+
+
+    <td>
+      <a href="/Transaction/Edit?id=@item.Id" class="btn btn-danger"><i class="bi bi-pencil-square"></i>&nbsp; </a>
+      <a onclick="return window.confirm('Are you Sure you want to delete this transaction?')" href="/Transaction/Delete?id=@item.Id" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+
+
+    </td>
+
+    </tr>}
+    </table>
+    <div class="input-container">
+    <a href="/Transaction/Add" class="btn btn-secondary">Back</a>
+    </div>
+   </div>

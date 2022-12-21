@@ -1,0 +1,22 @@
+﻿@model AC_BM.Models.DTO.ServiceListVM
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string username=User.Identity.Name;
+}
+welcome @username
+<section class="service">
+    @foreach(var service in Model.ServiceList){
+
+
+    <div class="card h-100" onclick="window.location.href='/Client/Add'"> 
+        <div class="card-img">
+            <img src="Uploads/@service.ServiceImage">
+        </div>
+        <div class="card-title">
+            <h4>@service.ServiceName</h4>
+            <h4>@service.Companys</h4>
+        </div>
+       </div>
+    }
+</section>

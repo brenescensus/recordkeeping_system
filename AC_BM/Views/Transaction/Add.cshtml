@@ -1,0 +1,65 @@
+﻿@model AC_BM.Models.Domain.Transaction
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <h1>Record Transactions</h1>
+    <div class="container">
+        <d class="row">
+            <div class="col-md-6">
+           <form method="post">
+        <div asp-validation-summary="All"></div>          
+                <div class="mb-3">
+                    <label class="form-label" asp-for="TransactionName">Title</label>
+                    <input asp-for="TransactionName" class="form-control" type="text" name="TransactionName" />
+                    <span asp-validation-for="TransactionName" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+            <label   class="form-label">Service Fee</label>
+            <input asp-for="Pay" class="form-control" type="number" name="Pay" value="@Model.Pay"/>
+            <span asp-validation-for="Pay"class="text-danger"></span>
+          </div>
+          <div class="mb-3">
+            <label   class="form-label">Tax</label>
+            <input asp-for="Tax" class="form-control" type="number" name="Tax" value="@Model.Tax" />
+            <span asp-validation-for="Tax"class="text-danger"></span>
+          </div>
+          <div class="mb-3">
+            <label   class="form-label">Net Pay</label>
+            <input asp-for="Net_pay" class="form-control" type="number" name="Net_pay"  value="@Model.Net_pay"/>
+            <span asp-validation-for="Net_pay"class="text-danger"></span>
+          </div>
+                <div class="mb-3">
+                    <label class="form-label">Facility Fee</label>
+                    <input asp-for="facilityfee" class="form-control" type="number" name="facilityfee" value="@Model.facilityfee"/>
+                      <span asp-validation-for="facilityfee" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Government Fee</label>
+                    <input asp-for="Governmentfee" class="form-control" type="number" name="Governmentfee" value="@Model.Governmentfee" />
+                    <span asp-validation-for="Governmentfee" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+            <label   class="form-label">Total</label>
+            <input asp-for="Amount" class="form-control" type="number" name="Amount" value="@Model.Amount" />
+            <span asp-validation-for="Amount"class="text-danger"></span>
+          </div>
+   
+             @if(TempData["msg"]!=null){
+             <div class="text-success">
+            @TempData["msg"]
+               </div>
+              }
+              <button class="btn btn-primary" type="submit">Ok</button>
+             <button class="btn btn-primary" type="submit" asp-controller="Transaction" asp-action="Add"> &nbsp;Save Record</button>
+            <a asp-action="TransactionList" asp-controller="Transaction" class="btn btn-danger" >All records</a>
+</form>
+</div>
+</d iv>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+
+}

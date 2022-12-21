@@ -1,20 +1,19 @@
-﻿using AC_BM.Models;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace AC_BM.Data
+namespace AC_BM.Models.Domain
 {
-    public class ApplicationDBContext:DbContext
+    public class ApplicationDBContext:IdentityDbContext<ApplicationUser>
     {
         public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options)
         {
         }
 
 
-        public DbSet<User> Users { get; set; }
+        public DbSet<User> Client { get; set; }
         public DbSet<Company> Companys { get; set; }
+        public DbSet<CompanyService> CompanyService { get; set; }
         public DbSet<Service> Services { get; set; }
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<Product> Products { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
 
 

@@ -1,0 +1,45 @@
+﻿@model AC_BM.Models.Domain.Service
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <h1>Add Service</h1>
+    <div class="col-6 d-flex justify-content-center">
+    <form method="post" asp-action="Add" asp-controller="Service" enctype="multipart/form-data">
+        <div asp-validation-summary="All"></div>
+    <div class="mb-3 ">
+            <label  class="form-label" asp-for="ServiceName"></label>
+            <input asp-for="ServiceName" class="form-control" type="text" />
+            <span asp-validation-for="ServiceName" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Companys"></label>
+        <select asp-items="Model.MultiCompanyList" multiple asp-for="Companys">
+                <option value=" ">--select--</option>
+
+            </select>
+
+            
+    </div>
+        <div class="mb-3>
+            <label class="form-label" >Image</label>
+            <input  class="form-control" asp-for=" ImageFile"  type="file" />
+            <span asp-validation-for="ImageFile" class="text-danger"></span>
+        </div>
+   
+    @if(TempData["msg"]!=null){
+        <div class="text-success">
+            @TempData["msg"]
+        </div>
+    }
+    <button class="btn btn-primary" type="submit" asp-controller="Service" asp-action="Add"> &nbsp;Add Service</button>
+ <a asp-action="ServiceList" asp-controller="Service" class="btn btn-danger" >All records</a>
+</form>
+</div>
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+
+}

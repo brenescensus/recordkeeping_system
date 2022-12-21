@@ -1,0 +1,40 @@
+﻿@model IEnumerable<AC_BM.Models.Domain.User>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div class="table-container">
+    <h1  > Client</h1>
+
+    <table class="table">
+    <tr>
+    <th>FullName</th>
+    <th>Email</th>
+    <th>Contact</th>
+    <th>Id/Passport</th>
+    <th>Address</th>
+    <th>Nationality</th>
+    <th>Dependence</th>
+    <th>Documents</th>
+    </tr>
+    @foreach(var item in Model){
+    <tr>
+    <td>@item.Name</td>
+    <td>@item.Email</td>
+    <td>@item.Contact</td>
+    <td>@item.Id_Passport</td>
+    <td>@item.Address</td>
+    <td>@item.Nationality</td>
+    <td>@item.Dependence</td>
+    <td><img style="height:60px;width:80px;" src="/Documents/@item.Documentss"/></td>
+    
+    <td>
+      <a href="/Client/Edit?id=@item.Id" class="btn btn-default"><i class="bi bi-pencil-square"></i>&nbsp; </a>
+      <a onclick="return window.confirm('Are you Sure you want to delete this client's details?')" href="/Client/Delete?id=@item.Id" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+    </td>
+
+    </tr>}
+    </table>
+    <div class="input-container">
+    <a href="/Client/ClientList" class="btn btn-sec">Back</a>
+    </div>
+   </div>

@@ -1,0 +1,39 @@
+﻿@model AC_BM.Models.DTO.LoginModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <meta name="viewport" content="width=device-width" />
+    <h1>Login</h1>
+
+
+    <div class="col-6 d-flex justify-content-center">
+    <form method="post" asp-action="Index" asp-controller="Admin">
+        <div asp-validation-summary="All"></div>
+    <div class="mb-3">
+            <label asp-for="Username" class="form-label"></label>
+            <div><i class="bi bi-envelope"></i></div>
+            <input asp-for="Username" class="form-control" type="text" />
+            <span asp-validation-for="Username"class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+            <label asp-for="Password" class="form-label"></label>
+        <input asp-for="Password" class="form-control"  type="password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    @if(TempData["msg"]!=null){
+        <div class="text-success">
+            @TempData["msg"]
+        </div>
+    }
+    <button class="btn btn-primary" type="submit" asp-controller="UserAunthentication" asp-action="Login"> &nbsp;Login</button>
+ <a asp-action="Registration" asp-controller="UserAunthentication" class="btn btn-danger" >Register</a>
+</form>
+</div>
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+}
