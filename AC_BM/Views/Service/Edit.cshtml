@@ -4,46 +4,48 @@
 }
 
 
-    <h1>Add Service</h1>
-    <div class="col-6 d-flex justify-content-center">
-    <form method="post" asp-action="Edit" asp-controller="Service">
-        <div asp-validation-summary="All"></div>
-                    <input asp-for="ServiceId" class="form-control" type="text" />
-        <input asp-for="ServiceName" class="form-control" type="hidden" />
-            <input asp-for="ServiceImage" class="form-control" type="hidden" />
-
-    <div class="mb-3 input-container">
-            <label  class="form-label" asp-for="ServiceName">Service Name</label>
-            <input asp-for="ServiceName" class="form-control" type="text" />
+<div class="wrapper">
+    <div class="title">Edit Services Form</div>
+    <form class="form" asp-action="Edit"  method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="All" class="text-danger"></div>
+         <div class="input_field">
+            <label asp-for="ServiceId"></label>
+            <input asp-for="ServiceId" class="input" type="hidden" />
+            <span asp-validation-for="ServiceId" class="text-danger"></span>
+        </div>
+        <div class="input_field">
+            <label asp-for="ServiceName"></label>
+            <input asp-for="ServiceName" class="input" type="text" />
             <span asp-validation-for="ServiceName" class="text-danger"></span>
-    </div>
-    <div class="input-container">
-        <label asp-for="Companys"></label>
-        <select  class="input" w-50 asp-items="Model.MultiCompanyList" asp-for="Companys">
-                <option>--select--</option>
-
-            </select>
-
-            
-    </div>
-        <div class="mb-3 input-controller">
-            <label class="form-label" asp-for="ServiceImage">Service Name</label>
-            <input asp-for="ImageFile" class="form-control" type="file" />
-            <span asp-validation-for="ServiceImage" class="text-danger"></span>
         </div>
-   
-    @if(TempData["msg"]!=null){
-        <div class="text-success">
-            @TempData["msg"]
-        </div>
-    }
-    <button class="btn btn-primary" type="submit" asp-controller="Service" asp-action="Add"> &nbsp;Add Service</button>
- <a asp-action="ServiceList" asp-controller="Service" class="btn btn-danger" >All records</a>
-</form>
-</div>
+        <div class="input_field">
+            <label asp-for="Companys"></label>
+            <div class="custom_select">
+                <select asp-items="Model.MultiCompanyList" asp-for="Companys" multiple>
+                    <option value=" ">--Select Company--</option>
+                </select>
+            </div>
+         </div>
+
+            <div class="input_field">
+                <label>Image</label>
+                <input asp-for=" ImageFile" type="file" class="input" />
+            <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+
+            @if (TempData["msg"] != null)
+            {
+                <div class="text-success">
+                    @TempData["msg"]
+                </div>
+            }
+            <button class="btn" type="submit" asp-controller="Service" asp-action="Add"> &nbsp;Edit Service</button>
+            <a asp-action="ServiceList" asp-controller="Service">All records</a>
+        </form>
+    </div>
 @section Scripts{
     @{
-        <partial name="_ValidationScriptsPartial"/>
+       // <partial name="_ValidationScriptsPartial"/>
     }
 
 }

@@ -3,51 +3,51 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
     <meta name="viewport" content="width=device-width" />
-    <h1>Enter Details</h1>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-           <form method="post" enctype="multipart/form-data">
+    
+  <div class="wrapper">
+                <div class="title">Client Form</div>
+           
+          <div method="post" enctype="multipart/form-data">
             
-                    <div class=" form-group">
-                        <label asp-for="Name" class="form-label">Full Name</label>
-                        <input asp-for="Name" class="form-control" type="text" />
+                    <div class="input_field">
+                        <label asp-for="Name">Full Name</label>
+                        <input asp-for="Name" class="input" type="text" />
                         <span asp-validation-for="Name" class="text-danger"></span>
                     </div>
-                    <div class=" form-group">
-                        <label asp-for="Email" class="form-label"></label>
-                        <input asp-for="Email" class="form-control" type="email" />
+                    <div class="input_field">
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" class="input" type="email" />
                         <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
-                    <div class=" form-group">
-                        <label asp-for="Contact" class="form-label"></label>
-                        <input asp-for="Contact" class="form-control" type="number"/>
+                    <div class="input_field">
+                        <label asp-for="Contact" ></label>
+                        <input asp-for="Contact" class="input" type="number"/>
                         <span asp-validation-for="Contact" class="text-danger"></span>
                     </div>
-                    <div class =" form-group">
-                        <label asp-for="Id_Passport" class="form-label">Id/Passport</label>
-                        <input asp-for="Id_Passport" class="form-control" type="number" />
+                    <div class="input_field">
+                        <label asp-for="Id_Passport">Id/Passport</label>
+                        <input asp-for="Id_Passport" class="input" type="number" />
                         <span asp-validation-for="Id_Passport" class="text-danger"></span>
                     </div>
                 <div class=" form-group">
-                    <label asp-for="Address" class="form-label"></label>
-                    <input asp-for="Address" class="form-control" type="text" />
+                    <label asp-for="Address"></label>
+                    <input asp-for="Address" class="input" type="text" />
                     <span asp-validation-for="Address" class="text-danger"></span>
                 </div>
-                <div class" form-group">
-                    <label asp-for="Nationality" class="form-label"></label>
-                    <input asp-for="Nationality" class="form-control" type="text" />
+                <div class="input_field">
+                    <label asp-for="Nationality"></label>
+                    <input asp-for="Nationality" class="input" type="text" />
                     <span asp-validation-for="Nationality" class="text-danger"></span>
                 </div>
-                <div class" form-group">
-                        <label asp-for="Dependence" class="form-label"></label>
-                        <input asp-for="Dependence" class="form-control" type="text" />
+                <div class="input_field">
+                        <label asp-for="Dependence"></label>
+                        <input asp-for="Dependence" class="input" type="text" />
                         <span asp-validation-for="Dependence" class="text-danger"></span>
                     </div>
-                    <div class" form-group">
-                        <label asp-for="DocFile" class="form-label">Attach File</label>
-                        <input asp-for="DocFile" class="form-control" type="file" />
+                    <div class"input_field">
+                        <label asp-for="DocFile">Attach File</label>
+                        <input asp-for="DocFile" clas="input" type="file" />
                     </div>
 
 
@@ -57,13 +57,12 @@
                      @TempData["msg"]
                    </div>
                                                }
-                   <button class="btn btn-primary" type="submit" asp-controller="Client" asp-action="Add"> &nbsp;Add Details </button>
+                   <a class="btn btn-primary" type="submit" asp-controller="Client" asp-action="Add"> &nbsp;Add Details </a>
                   @*<a asp-action="Display" asp-controller="Dashboard" class="btn btn-danger" >Back</a>*@
 
-                </form>
-            </div>
-        </div>
-    </div>
+             </div>
+         </div>
+        
     @section Scripts{
     @{
         <partial name="_ValidationScriptsPartial"/>

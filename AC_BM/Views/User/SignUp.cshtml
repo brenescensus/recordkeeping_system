@@ -1,4 +1,4 @@
-﻿@model AC_BM.ViewModels.UserVM
+﻿@model AC_BM.Models.ViewModels.UserVM
 @{
     Layout = Layout = "~/Views/Shared/_AdminMasterLayout.cshtml"; 
 }
@@ -10,11 +10,9 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Sign Up in order to access some of our services</p>
+<p>Sign Up in order access our services</p>
 <div class="container-fluid">
 <div class="col-sm-6 d-flex justify-content-center">
-
-  
     <form method="post" asp-controller="User" asp-action="SignUp">
         <div>
             <img  src="~/Images/AC_Logo.jpg" class="border-circle" >
@@ -22,7 +20,6 @@
         
             <div class="mb-1">
                 <label class="form-label" asp-for="Name"></label>
-                <div><i class="bi bi-person-circle"></i></div>
                 <input asp-for="Name"  class="form-control" name="name"  type="text"/>
                 <span asp-validation-for="Name" class="text-danger"></span>
 
@@ -47,6 +44,7 @@
             
               <div>
                   <button class="btn-primary" type="submit" asp-controller="User" asp-action="SignUp">SignUp</button>
+                 
                   <a asp-action="Login" class="btn btn-login text-warning" >Back To Login</a>
               </div>
          </form>

@@ -3,20 +3,20 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
     <div class="table-container">
-    <h1  > Company</h1>
+    <h1  > List of All Companies</h1>
 
     <table class="table">
     <tr>
     <th>Company Name</th>
-    <th>Action</th>
+    <th>Edit/Delete</th>
     </tr>
     @foreach(var item in Model){
     <tr>
     <td>@item.CompanyName</td>
 
     <td>
-      <a href="/Company/Edit?id=@item.CompanyId" class="btn btn-danger"><i class="bi bi-pencil-square"></i>&nbsp; </a>
-      <a onclick="return window.confirm('Are you Sure you want to delete?')" href="/Company/Delete?id=@item.CompanyId" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+      <a href="/Company/Edit?id=@item.CompanyId"><i class="bi bi-pencil-square"></i>&nbsp; </a>
+      <a onclick="return window.confirm('Are you Sure you want to delete?')" href="/Company/Delete?id=@item.CompanyId"><i class="bi bi-trash"></i></a>
 
 
     </td>
@@ -24,6 +24,6 @@
     </tr>}
     </table>
     <div class="input-container">
-    <a href="/Company/Add" class="btn btn-secondary">Back</a>
+    <a href="/Company/Add">Back</a>
     </div>
    </div>

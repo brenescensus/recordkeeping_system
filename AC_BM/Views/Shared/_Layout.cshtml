@@ -15,10 +15,10 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-secondary  border-bottom box-shadow ">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-info  border-bottom box-shadow ">
             <div class="container-fluid">
-                <a class="navbar-brand text-danger fw-bolder  " asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="~/Images/AC_Logo.jpg"  class="bg-dark" style="width:70px;height:70px;"/> AC IMMIGRATION</a>
+                <a class="navbar-brand text-danger fw-bolder" asp-area="" asp-controller="Home" asp-action="Index">
+                    AC IMMIGRATION </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -32,39 +32,35 @@
                         <li class="nav-item">
                             <a class="nav-link text-light  " asp-area="" asp-controller="UserAunthentication" asp-action="Registration">SignUp</a>
                         </li>
-                       @* <li class="nav-item">
-                            <a class="nav-link text-light  " asp-area="" asp-controller="UserAunthentication" asp-action="Registration">SignUp</a>
-                        </li>*@
+                       
                         @if (User.IsInRole("Admin"))
                         {
-                            @*<li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Admin
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="/Company/Add">Company</a></li>
-                                    <li><a class="dropdown-item" href="/Service/ServiceList">Service</a></li>
-                                    <li><a class="dropdown-item" href="/Transaction/TransactionList">Transaction</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Company" asp-action="Add"> @*href="/Company/Add"*@ Company</a></li>
+                                    <li><a class="dropdown-item" @*asp-controller="Service" asp-action="Add"*@ href="/Service/Add">Service</a></li>
+                                    <li><a class="dropdown-item"@* asp-area="" asp-controller="" asp-action=""*@ href="/Transaction/Add">Transaction</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" @*asp-controller="UserAunthentication" asp-action="Logout"*@ href="/UserAunthentication/Logout/">Logout</a></li>
                                 </ul>
-                            </li>*@
-                          <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Admin" asp-action="Index">Admin</a>
+                            </li>
+                         @* <li class="nav-item">
+                                <a class="nav-link text-light" asp-area="" asp-controller="Transaction" asp-action="">Bills</a>
                             </li>
                              <li class="nav-item">
                                 <a class="nav-link text-light" asp-area="" asp-controller="Company" asp-action="Add">Company</a>
                             </li>
                              <li class="nav-item">
                                 <a class="nav-link text-light" asp-area="" asp-controller="Service" asp-action="Add">Service</a>
-                            </li>
+                            </li>*@
                         }
-@*                    </ul>
-*@@*                    <ul class="navbar-nav flex-grow-1">
-*@                       
-                        
+                   
                             
-                        
-
-*                       @if (!string.IsNullOrEmpty(username))
+                                         @if (!string.IsNullOrEmpty(username))
                         {
                         <li class="nav-item">
                                 <a class="nav-link text-light" asp-area="" asp-controller="UserAunthentication" asp-action="Logout">Logout</a>
@@ -76,17 +72,26 @@
             
         </nav>
     </header>
-    <div class="container-fluid">
+   
+  <div class="container-fluid">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted text-center">
-        <div class="container">
-            &copy; 2022 - All rights Reserved- <a asp-area="" asp-controller="Home" asp-action="Index"></a>
-            
+    <footer class="footer">
+           <p> &copy; 2022 - All rights Reserved- <a asp-area="" asp-controller="Home" asp-action="Index"></a></p>
+        <div class="icon">
+            <a href=""><i class="bi bi-linkedin" aria-hidden="true"></i> </a>
+            <a href=""><i class="bi bi-twitter" aria-hidden="true"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-github" aria-hidden="true"></i></a>
+                <a href=""><i class="bi bi-envelope" aria-hidden="true"></i></a>
+
+            </a>
+
         </div>
+        
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

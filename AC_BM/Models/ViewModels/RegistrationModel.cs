@@ -7,7 +7,6 @@ namespace AC_BM.Models.DTO
     public class RegistrationModel
     {
         [Required]
-
         public String Name { get; set; }
         [Required]
         [EmailAddress]

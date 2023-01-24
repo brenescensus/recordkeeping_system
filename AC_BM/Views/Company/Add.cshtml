@@ -4,25 +4,25 @@
 }
 
 
-    <h1>Add Company</h1>
 
 
-    <div class="col-6 d-flex justify-content-center">
-    <form method="post" asp-action="Add">
-        <div asp-validation-summary="All"></div>
-    <div class="mb-3">
-            <label  class="form-label">Company Name</label>
-            <input asp-for="CompanyName" class="form-control" type="text" />
-            <span asp-validation-for="CompanyName"class="text-danger"></span>
+<div class="wrapper">
+        <div class="title">Company Form</div>
+<form class="form" method="post">
+        <div asp-validation-summary="All"></div>  
+    <div class="input_field">
+            <label asp-for="CompanyName">CompanyName</label>
+            <input asp-for="CompanyName" class="input" type="text"/>
+            <span asp-validation-for="CompanyName" class="text-danger"></span>
     </div>
    
     @if(TempData["msg"]!=null){
-        <div class="text-success">
+        <div class="error">
             @TempData["msg"]
         </div>
     }
-    <button class="btn btn-primary" type="submit" asp-controller="Company" asp-action="Add"> &nbsp;Add Company</button>
- <a asp-action="CompanyList" asp-controller="Company" class="btn btn-danger" >All records</a>
+      <a class="btn" type="submit" asp-controller="Company" asp-action="Add"> &nbsp;Add Company</a>
+     <a asp-action="CompanyList" asp-controller="Company">View List</a>
 </form>
 </div>
 @section Scripts{

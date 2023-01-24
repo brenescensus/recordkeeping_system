@@ -4,19 +4,29 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     string username=User.Identity.Name;
 }
-welcome @username
+Hello @username welcome to AC Immigration Services
 <section class="service">
-    @foreach(var service in Model.ServiceList){
+    @foreach(var item  in Model.ServiceList){
 
-
-    <div class="card h-100" onclick="window.location.href='/Client/Add'"> 
+@*
+    @*<div class="card h-100" onclick="window.location.href='/Client/Add'"> 
         <div class="card-img">
-            <img src="Uploads/@service.ServiceImage">
-        </div>
+                <img style="height:60px;width:80px;" src="/Uploads/@item.ServiceImage/"/>
+            @*<img src="/Uploads/@item.ServiceImage/">*@
+        @*</div>
         <div class="card-title">
-            <h4>@service.ServiceName</h4>
-            <h4>@service.Companys</h4>
+            <h4>@item.ServiceName</h4>
+            <h4>@item.Companys</h4>
         </div>
-       </div>
+       </div*@
+
+       <div class="serviceinfo">
+            <div class="box">
+                <img src="/Uploads/@item.ServiceImage/">
+@*                <i class="fa fa-laptop" aria-hidden="true"></i>
+*@                <h3>@item.ServiceName</h3>
+                <p>@item.Companys</p>
+            </div>
+        </div>
     }
 </section>

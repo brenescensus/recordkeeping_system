@@ -2,37 +2,35 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-
     <meta name="viewport" content="width=device-width" />
-    <h1>Login</h1>
 
-
-    <div class="col-6 d-flex justify-content-center">
-    <form method="post" asp-action="Index" asp-controller="Admin">
-        <div asp-validation-summary="All"></div>
-    <div class="mb-3">
-            <label asp-for="Username" class="form-label"></label>
-            <input asp-for="Username" class="form-control" type="text" />
-            <span asp-validation-for="Username"class="text-danger"></span>
+ <div class="wrapper">
+        <div class="title">Login Form</div>
+    <form class="form" method="post" asp-controller="UserAunthentication" asp-action="Login">
+        <div asp-validation-summary="All" class="error"></div>
+    <div class="input_field">
+            <label asp-for="Username"></label>
+            <input asp-for="Username" class="input" type="text" />
+            <span asp-validation-for="Username" class="error"></span>
     </div>
-    <div class="mb-3">
-            <label asp-for="Password" class="form-label"></label>
-        <input asp-for="Password" class="form-control"  type="password" />
-        <span asp-validation-for="Password" class="text-danger"></span>
+    <div class="input_field">
+            <label asp-for="Password" ></label>
+        <input asp-for="Password" class="input" type="password" />
+        <span asp-validation-for="Password" class="error"></span>
     </div>
     @if(TempData["msg"]!=null){
         <div class="text-success">
             @TempData["msg"]
         </div>
     }
-    <button class="btn btn-primary" type="submit" asp-controller="UserAunthentication" asp-action="Login"> &nbsp;Login</button>
- <a asp-action="Registration" asp-controller="UserAunthentication" class="btn btn-danger" >Register</a>
+      <button  class="btn" type="submit" asp-controller="UserAunthentication" asp-action="Login"> &nbsp;Login</button>
+      <p>Do not have an account?</p>
+      <a asp-action="Registration" asp-controller="UserAunthentication">Register</a>
 </form>
 </div>
 @section Scripts{
     @{
-        <partial name="_ValidationScriptsPartial" />
+        //<partial name="_ValidationScriptsPartial" />
     }
 
 }
