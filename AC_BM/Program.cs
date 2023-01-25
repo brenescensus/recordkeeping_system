@@ -34,7 +34,6 @@ builder.Services.AddScoped<IFileService, FileService>();
 builder.Services.AddScoped<IServiceAbstract, ServiceImplementation>();
 builder.Services.AddScoped<IClientServices, ClientServices>();
 builder.Services.AddScoped<IDocumentService, DocumentService>();
-builder.Services.AddScoped<ITransactionAbstract, TransactionImplementation>();
 
 
 var app = builder.Build();

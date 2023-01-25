@@ -6,7 +6,7 @@
 
 <div class="wrapper">
     <div class="title">Edit Services Form</div>
-    <form class="form" asp-action="Edit"  method="post" enctype="multipart/form-data">
+    <form class="form" asp-action="Edit"  method="post"  asp-controller="Service" asp-action="Add" enctype="multipart/form-data">
         <div asp-validation-summary="All" class="text-danger"></div>
          <div class="input_field">
             <label asp-for="ServiceId"></label>
@@ -39,7 +39,7 @@
                     @TempData["msg"]
                 </div>
             }
-            <button class="btn" type="submit" asp-controller="Service" asp-action="Add"> &nbsp;Edit Service</button>
+            <button class="btn" type="submit" > &nbsp;Edit Service</button>
             <a asp-action="ServiceList" asp-controller="Service">All records</a>
         </form>
     </div>

@@ -14,8 +14,7 @@ namespace AC_BM.Models.Domain
         public DbSet<Company> Companys { get; set; }
         public DbSet<CompanyService> CompanyService { get; set; }
         public DbSet<Service> Services { get; set; }
-        public DbSet<Transaction> Transactions { get; set; }
 
 
-    }
 }
+    }

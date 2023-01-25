@@ -8,7 +8,7 @@
 
 <div class="wrapper">
         <div class="title">Company Form</div>
-<form class="form" method="post">
+    <form class="form" method="post" asp-controller="Company" asp-action="Add">
         <div asp-validation-summary="All"></div>  
     <div class="input_field">
             <label asp-for="CompanyName">CompanyName</label>
@@ -21,7 +21,7 @@
             @TempData["msg"]
         </div>
     }
-      <a class="btn" type="submit" asp-controller="Company" asp-action="Add"> &nbsp;Add Company</a>
+        <button class="btn" type="submit" asp-controller="Company" asp-action="Add"> &nbsp;Add Company</button>
      <a asp-action="CompanyList" asp-controller="Company">View List</a>
 </form>
 </div>

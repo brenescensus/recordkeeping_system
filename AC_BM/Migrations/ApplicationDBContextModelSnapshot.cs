@@ -150,44 +150,6 @@ namespace ACBM.Migrations
                     b.ToTable("Services");
                 });
 
-            modelBuilder.Entity("AC_BM.Models.Domain.Transaction", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<double>("Amount")
-                        .HasColumnType("float");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<double>("Governmentfee")
-                        .HasColumnType("float");
-
-                    b.Property<double>("Net_pay")
-                        .HasColumnType("float");
-
-                    b.Property<double>("Pay")
-                        .HasColumnType("float");
-
-                    b.Property<double>("Tax")
-                        .HasColumnType("float");
-
-                    b.Property<string>("TransactionName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("facilityfee")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Transactions");
-                });
-
             modelBuilder.Entity("AC_BM.Models.Domain.User", b =>
                 {
                     b.Property<int>("Id")
