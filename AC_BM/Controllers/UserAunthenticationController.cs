@@ -73,19 +73,19 @@ namespace AC_BM.Controllers
 
         }
 
-        //public async Task<IActionResult> Reg()
-        //{
-        //    var model = new RegistrationModel
-        //    {
-        //        Username = "Collins",
-        //        Email = "agweyucollins@gmail.com",
-        //        Name = "Agweyu Collins",
-        //        Password = "Admin@123"
-        //    };
-        //    model.Role = "Admin";
-        //    var result = await _service.RegisterAsync(model);
-        //    return Ok(result);
-        //}
+        public async Task<IActionResult> Reg()
+        {
+            var model = new RegistrationModel
+            {
+                Username = "Collins",
+                Email = "agweyucollins@gmail.com",
+                Name = "Agweyu Collins",
+                Password = "Admin@123"
+            };
+            model.Role = "Admin";
+            var result = await _service.RegisterAsync(model);
+            return Ok(result);
+        }
 
 
 
