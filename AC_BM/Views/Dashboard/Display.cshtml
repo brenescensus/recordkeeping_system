@@ -7,26 +7,20 @@
 Hello @username welcome to AC Immigration Services
 <section class="service">
     @foreach(var item  in Model.ServiceList){
-
-@*
-    @*<div class="card h-100" onclick="window.location.href='/Client/Add'"> 
-        <div class="card-img">
-                <img style="height:60px;width:80px;" src="/Uploads/@item.ServiceImage/"/>
-            @*<img src="/Uploads/@item.ServiceImage/">*@
-        @*</div>
-        <div class="card-title">
-            <h4>@item.ServiceName</h4>
-            <h4>@item.Companys</h4>
-        </div>
-       </div*@
-
-       <div class="serviceinfo">
-            <div class="box">
-                <img src="/Uploads/@item.ServiceImage/">
-@*                <i class="fa fa-laptop" aria-hidden="true"></i>
-*@                <h3>@item.ServiceName</h3>
-                <p>@item.Companys</p>
+        <div class="col-md-4 col-xs-6 border-primary mb-3">
+            <div class="card" style="max-width: 500px;">
+                <img src="/Uploads/@item.ServiceImage" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title bg-info">@item.ServiceName</h5>
+                    <p class="card-text">@item.Companys</p>
+                    <a href="#" class="btn">Go somewhere</a>
+                </div>
             </div>
         </div>
+
+
+    
+
+       
     }
 </section>

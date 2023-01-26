@@ -14,8 +14,12 @@ namespace AC_BM.Models.Domain
         //[Required]
 
         public string? ServiceImage { get; set;}
+
+       // public string Description { get; set; }
+
         [NotMapped]
         [Required]
+
 
         public IFormFile ? ImageFile { get; set;}
         [NotMapped]

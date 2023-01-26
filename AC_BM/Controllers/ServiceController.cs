@@ -77,7 +77,7 @@ namespace AC_BM.Controllers
             model.MultiCompanyList = multiCompanyList;
             return View(model);
 
-        }
+        } 
         [HttpPost]
         public IActionResult Edit(Service model)
         {

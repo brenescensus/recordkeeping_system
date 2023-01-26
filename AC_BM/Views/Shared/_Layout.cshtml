@@ -17,8 +17,10 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-info  border-bottom box-shadow ">
             <div class="container-fluid">
-                <a class="navbar-brand text-danger fw-bolder" asp-area="" asp-controller="Home" asp-action="Index">
-                    AC IMMIGRATION </a>
+                <a class="navbar-brand" href="#">
+      <img src="/Images/AC_Logo.jpg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+      AC IMMIGRATION
+    </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -38,12 +40,12 @@
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Admin
+                                    Management
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" asp-controller="Company" asp-action="Add"> @*href="/Company/Add"*@ Company</a></li>
                                     <li><a class="dropdown-item" @*asp-controller="Service" asp-action="Add"*@ href="/Service/Add">Service</a></li>
-                                    <li><a class="dropdown-item"@* asp-area="" asp-controller="" asp-action=""*@ href="/Transaction/Add">Transaction</a></li>
+                                    <li><a class="dropdown-item"@* asp-area="" asp-controller="" asp-action=""*@ href="/Client/ClientList">ViewClients</a></li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" @*asp-controller="UserAunthentication" asp-action="Logout"*@ href="/UserAunthentication/Logout/">Logout</a></li>
                                 </ul>
@@ -86,9 +88,7 @@
             <a href=""><i class="bi bi-twitter" aria-hidden="true"></i></a>
             <a href=""><i class="bi bi-facebook"></i></a>
             <a href=""><i class="bi bi-github" aria-hidden="true"></i></a>
-                <a href=""><i class="bi bi-envelope" aria-hidden="true"></i></a>
-
-            </a>
+            <a href=""><i class="bi bi-envelope" aria-hidden="true"></i></a>
 
         </div>
         

@@ -1,6 +1,6 @@
 ﻿@model AC_BM.Models.Domain.Service
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout ="~/Views/Shared/_Layout.cshtml";
 }
 
     <div class="wrapper">
@@ -14,19 +14,19 @@
     </div>
     <div class="input_field">
         <label>Companys</label>
-        <div class="custom_select">
-            <select asp-items="Model.MultiCompanyList" asp-for="Companys" multiple>
+        <div class="custom_select"> 
+            <select asp-items="Model.CompanyList" asp-for="Companys" multiple>
             <option value=" ">--Select Company--</option>
 
             </select>
          </div>
     </div>
-        <div >
-            <label  >Image</label>
+        <div class="input-container" >
+            <label >Image</label>
                 <input  asp-for=" ImageFile" type="file" />
             <span asp-validation-for="ImageFile" class="text-danger"></span>
         </div>
-   
+ 
     @if(TempData["msg"]!=null){
         <div class="text-success">
             @TempData["msg"]
