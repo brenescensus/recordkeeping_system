@@ -1,4 +1,5 @@
 ﻿using AC_BM.Models.Domain;
+using AC_BM.Models.ViewModels;
 using AC_BM.Repositories.Abstract;
 
 namespace AC_BM.Repositories.Implementation
@@ -11,14 +12,24 @@ namespace AC_BM.Repositories.Implementation
             _dbContext = dbContext;
         }
 
-        public bool Add(User model)
+        public bool Add(ClientVM model)
         {
             try
             {
-               
+                var usr = new User
+                {
+                    FullName = model.FullName,
+                    Email = model.Email,
+                    Nationality = model.Nationality,
+                    Contact = model.Contact,
+                    Id_Passport = model.Id_Passport,
+                    Service=model.Service,
+                    DocFiles = model.DocFiles,
+
+                };
 
                 
-                _dbContext.Client.Add(model);
+                _dbContext.Client.Add(usr);
                 _dbContext.SaveChanges();
 
                 return true;
@@ -42,7 +53,7 @@ namespace AC_BM.Repositories.Implementation
                 return true;
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return false;
             }
@@ -65,6 +76,35 @@ namespace AC_BM.Repositories.Implementation
             try
             {
                 _dbContext.Client.Update(model);
+                _dbContext.SaveChanges();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool Update(ClientVM model)
+        {
+            try
+            {
+                var usr = new User
+                {
+                    FullName = model.FullName,
+                    Email = model.Email,
+                    Nationality = model.Nationality,
+                    Contact = model.Contact,
+                    Id_Passport = model.Id_Passport,
+                    Service = model.Service,
+                    DocFiles = model.DocFiles,
+
+                };
+
+
+               
+                _dbContext.Client.Update(usr);
                 _dbContext.SaveChanges();
                 return true;
 

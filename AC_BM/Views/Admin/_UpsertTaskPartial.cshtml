@@ -1,0 +1,80 @@
+﻿
+@{
+    var isEdit = Model.IsEdit;
+    var headerText = isEdit ? "Update" : "Create";
+    var btnText = isEdit ? "Update" : "Add";
+}
+<div class="modal-header header-primary">
+    <h5 class="modal-title" id="exampleModalLabel"> @headerText  </h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+    </button>
+</div>
+<div class="modal-body">
+    <form method="post" asp-action="AddOrEditTask" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly"></div>
+      
+        <div class="row mb-3 d-flex align-items-center">
+            <div class="col-md-12 p-2">
+                <label>Task Title</label>
+                <input class="form-control" type="text" >
+                <span></span>
+            </div>
+
+            <div class="col-md-12 p-2">
+                <label>Task Priority</label>
+                <select class="form-control">
+                    <option value="">---Select Priority---</option>
+                    <option value="Highest">Highest</option>
+                    <option value="Lowest">Lowest</option>
+                    <option value="Medium">Medium</option>
+                </select>
+                <span></span>
+            </div>
+            <div class="col-md-12 p-2">
+                <label>Task Status</label>
+                <select class="form-control" >
+                    <option value="">---Select Status---</option>
+                    <option value="Active">Active</option>
+                    <option value="InProgress">In Progress</option>
+                    <option value="Complete">Complete</option>
+                    <option value="OnHold">OnHold</option>
+                </select>
+                <span></span>
+            </div>
+
+            <div class="col-md-12 p-2">
+                <label>Task Document & Image</label>
+                <input class="form-control" type="file" name="file">
+                <span></span>
+            </div>
+            <div class="col-md-12 p-2">
+                <label>Project Category</label>
+                <select class="form-control" >
+                    <option value="">---select Category</option>
+                
+                            <option value="Id">Name</option>
+
+                  
+                </select>
+                <span></span>
+            </div>
+            <div class="row justify-content-center p-2">
+                <div class="col-lg-6 col-sm-6 ">
+                    <label for="startDate">Start</label>
+                    <input id="startDate" class="form-control" type="date"  />
+                    <span id="startDateSelected"></span>
+                </div>
+                <div class="col-lg-6 col-sm-6 ">
+                    <label for="endDate">End</label>
+                    <input id="endDate" class="form-control" type="date" />
+                    <span id="endDateSelected"></span>
+                </div>
+            </div>
+            <div class="col-md-12 d-flex justify-content-end mt-3">
+                <button type="button" class="btn btn-outline-primary-2" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary-2 ms-2">@btnText</button>
+            </div>
+        </div>
+    </form>
+</div>
+<partial name="_ValidationScriptsPartial" />

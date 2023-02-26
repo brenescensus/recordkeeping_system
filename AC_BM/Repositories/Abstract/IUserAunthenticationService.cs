@@ -1,5 +1,6 @@
 ﻿//using AC_BM.Areas.Identity.Pages.Account;
 using AC_BM.Models.DTO;
+using AC_BM.Models.ViewModels;
 using LoginModel = AC_BM.Models.DTO.LoginModel;
 
 namespace AC_BM.Repositories.Abstract

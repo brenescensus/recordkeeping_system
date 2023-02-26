@@ -1,7 +1,7 @@
-﻿using AC_BM.Models.Domain;
+﻿using AC_BM.Helper;
+using AC_BM.Models.Domain;
+using AC_BM.Models.ViewModels;
 using AC_BM.Repositories.Abstract;
-using AC_BM.Repositories.Implementation;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -24,45 +24,65 @@ namespace AC_BM.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            
-            return View();
+          var countrydata = Countries.GetAll();
+          var servicedata=Services.GetAll();
+          var model = new ClientVM();
+          model.CountriesSelectList = new List<SelectListItem>();
+            model.ServiceSelectList=new List<SelectListItem>();
+          foreach(var country in countrydata) { 
+             model.CountriesSelectList.Add(new SelectListItem { Text=country.Name,Value=country.Name});
+            }
+          foreach(var service in servicedata)
+            {
+                model.ServiceSelectList.Add(new SelectListItem { Text = service.Name, Value = service.Name });
+            }
+            return View(model);
         }
 
         [HttpPost]
-        public IActionResult Add(User model)
+        public IActionResult Add(ClientVM model)
         {
-
-            if (!ModelState.IsValid)
-                return View(model);
-            if (model.DocFile != null)
+            //but I can not select more than one document
+            //if (!ModelState.IsValid)
+            //    return View(model);
+            //long size = model.DocFiles.Sum(f => f.Length);
+            if (model.DocFiles != null)
             {
-                var fileresult = _documentService.SaveDoc(model.DocFile);
-                if (fileresult.Item1 == 0)
-                {
+                var fileresult = _documentService.SaveDocument(model.DocFiles);
+                if (!fileresult)
+                   {
                     TempData["msg"] = "Error while saving the document";
+                   }
+                   else
+                  {
+                    var DocumentName = model.Documentss;
+                    // model.Documentss = DocumentName;
+                    // return Ok(new {count = model.DocFiles.Count});
+                    var result = _clientservices.Add(model);
+                    if (result)
+                    {
+                        TempData["msg"] = "details saved successfully";
+                        return RedirectToAction(nameof(Add));
+                    }
+                    else
+                    {
+                        TempData["msg"] = "Error while saving your details";
+
+                        return RedirectToAction(nameof(Add));
+
+                    }
 
                 }
-                var DocumentName = fileresult.Item2;
-                model.Documentss = DocumentName;
+                
+              
+
             }
-            else
-            {
-                var result = _clientservices.Add(model);
-                if (result)
-                {
-                    TempData["msg"] = "Your details have been saved  successfully";
-                    return RedirectToAction(nameof(Add));
-                }
-                else
-                {
-                    TempData["msg"] = "Error while saving your details";
+            return View(model); 
+             
 
-                    return RedirectToAction(nameof(Add));
 
-                }
-            }
-            return View();
-        }
+        
+    }
 
         [HttpGet]
         public IActionResult Edit(int id)
@@ -73,10 +93,10 @@ namespace AC_BM.Controllers
         }
 
         [HttpPost]
-        public IActionResult Update(User model)
+        public IActionResult Update(ClientVM model)
         {
-            if (!ModelState.IsValid)
-                return View();
+            //if (!ModelState.IsValid)
+            //    return View();
             var result = _clientservices.Update(model);
             if (result)
             {
@@ -94,11 +114,12 @@ namespace AC_BM.Controllers
 
 
 
-        public IActionResult ClientList(User model)
+        public IActionResult ClientList()
         {
 
             var data = this._clientservices.List().ToList();
             return View(data);
+               
 
         }
         public IActionResult Delete(int id)
@@ -110,7 +131,7 @@ namespace AC_BM.Controllers
 
         }
 
-
+ 
 
 
 

@@ -29,9 +29,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 //builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(option => { option.IdleTimeout = TimeSpan.FromMinutes(120); });
 builder.Services.AddScoped<IUserAunthenticationService, UserAuthenticationService>();
-builder.Services.AddScoped<ICompanyAbstract, CompanyImplementation>();
 builder.Services.AddScoped<IFileService, FileService>();
-builder.Services.AddScoped<IServiceAbstract, ServiceImplementation>();
 builder.Services.AddScoped<IClientServices, ClientServices>();
 builder.Services.AddScoped<IDocumentService, DocumentService>();
 

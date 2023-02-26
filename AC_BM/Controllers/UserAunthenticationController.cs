@@ -1,16 +1,22 @@
-﻿using AC_BM.Models.DTO;
+﻿using AC_BM.Models.Domain;
+using AC_BM.Models.DTO;
 using AC_BM.Repositories.Abstract;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+ 
 
 namespace AC_BM.Controllers
 {
     public class UserAunthenticationController : Controller
     {
         IUserAunthenticationService _service;
-        public UserAunthenticationController(IUserAunthenticationService service)
+            private readonly UserManager<ApplicationUser> _userManager;
+        public UserAunthenticationController(IUserAunthenticationService service, UserManager<ApplicationUser> userManager)
         {
            this._service=service;
+            _userManager = userManager;
+
         }
 
 
@@ -25,13 +31,13 @@ namespace AC_BM.Controllers
         [HttpPost]
         public async Task<IActionResult> Registration(RegistrationModel model)
         {
+            model.Role = "User";
+
             if (!ModelState.IsValid)
                 return View(model);
-            model.Role = "User";
             var result = await _service.RegisterAsync(model);
             if (result.StatusCode == 1)
             {
-
                 TempData["msg"] = "registration successful";
                 return RedirectToAction(nameof(Login));
             }
@@ -52,12 +58,28 @@ namespace AC_BM.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginModel model)
         {
-            if (!ModelState.IsValid) 
-                return View(model);
-            
-            var result = await _service.LoginAsync(model);
+        if (!ModelState.IsValid) 
+         return View(model);
+        var result = await _service.LoginAsync(model);
             if (result.StatusCode == 1)
-               return RedirectToAction("Display", "Dashboard");
+            {
+                var user = await _userManager.FindByNameAsync(model.Username);
+                var roles = await _userManager.GetRolesAsync(user);
+                string rolename = roles[0];
+                if (rolename == "Admin")
+                {
+
+                   // TempData["msg"] = "Logged in successfully";
+                    return RedirectToAction("Index", "Dashboard");
+                }
+                else
+                {
+                   // TempData["msg"] = "Logged in successfully";
+
+                    return RedirectToAction("Add", "Client");
+                }
+
+            }
             else
             {
                 TempData["msg"] = "Could not log in";
@@ -88,7 +110,9 @@ namespace AC_BM.Controllers
         }
 
 
+       
 
+    
 
 
 

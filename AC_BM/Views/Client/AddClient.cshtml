@@ -1,0 +1,72 @@
+﻿@model AC_BM.Models.Domain.User
+@{
+    ViewData["Title"] = "Add Client";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}  
+
+
+<div class="row border g-0 rounded shadow-sm bg-white">
+    <form class="p-3" method="post" enctype="multipart/form-data"  asp-action="Add" asp-controller="Client">
+        <div class="row p-2">
+            <div class="col">
+                <div class="form-group p-2">
+                    <label for="fullname">FullName</label>
+                    <input asp-for="FullName" type="text" class="form-control" placeholder="fullname">
+                    <span class="text-danger pt-1 font-monospace fw-normal" asp-validation-for="FullName"></span>
+
+                </div>
+                <div class="form-group p-2">
+                    <label asp-for="Email">Email</label>
+                    <input type="email"  asp-for="Email" class="form-control" placeholder="Email">
+                    <span class="text-danger pt-1 font-monospace fw-normal" asp-validation-for="Email"></span>
+
+                </div>
+                <div class="form-group p-2">
+                    <label for="Contact">Contact</label>
+                    <input type="tel" asp-for="Contact" class="form-control" placeholder="Telephone number">
+                    <span class="text-danger pt-1 font-monospace fw-normal" asp-validation-for="Contact"></span>
+
+                </div>
+                <div class="form-group p-2">
+                    <label for="Id/Passport">Id/Passport</label>
+                    <input type="tel" asp-for="Id_Passport" class="form-control" placeholder="Identification number">
+                    <span class="text-danger pt-1 font-monospace fw-normal" asp-validation-for="Id_Passport"></span>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group p-2">
+                    <label for="number">Nationality</label>
+                    <input type="text" asp-for="Nationality" class="form-control" placeholder="Nationality">
+                    <span class="text-danger pt-1 font-monospace fw-normal" asp-validation-for="Nationality"></span>
+
+                </div>
+                @*<div class="form-group p-2">
+                <label for="number">Type of service </label>
+                <select class="form-select">
+                <option selected>Open this select menu</option>
+                <option disabled selected>---select service---</option>
+                <option value="2">one</option>
+                <option value="3">Two</option>
+                </select>
+                </div>*@
+                <div class="form-group p-2">
+                    <label for="number">Document </label>
+                    <input type="file" asp-for="DocFiles" class="form-control" >
+
+                </div>
+@*                <div class="form-group p-2">
+                    <label for="number">Document </label>
+                    <input type="file" class="form-control" placeholder="Nationality">
+                </div>*@
+            </div>
+        </div>
+       @* @if(TempData["msg"]!=null){
+                   <div class="text-success">
+                     @TempData["msg"]
+                     </div>*@
+        <div class="d-flex justify-content-end pe-3">
+            <button type="submit" class="btn btn-md btn-primary" asp-action="Add" asp-controller="Client">Submit</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,70 @@
+﻿@model IEnumerable<AC_BM.Models.Domain.User>
+
+
+@{
+    ViewData["Title"] = "Users";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<div class="row border g-0 rounded shadow-sm bg-white">
+    <div class="row">
+        <div class="row d-flex flex-row-reverse">
+            <div class="col-lg-2 mx-3">
+                <button  class="btn btn-primary primary btn-md mt-3 ms-lg-2" type="button" data-bs-toggle="modal" data-url="/Task/ModalTask" data-id="add" data-bs-target="#upsertModal">
+                    <i class="ri-add-fill"></i>&nbsp; Users
+                </button>
+            </div>
+            <div class="col-lg-2">
+                <input type="text" class="form-control mt-3" id="searchdata" placeholder="&#xF002; Search user">
+            </div>
+        </div>
+    </div>
+    <div class="col p-3">
+        <div class="table-responsive ">
+            <table id="availabletask" class="row-border " style="width:100%">
+                <thead class="taskhead">
+                    <tr>
+                        <th>FullName</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Id/Passport</th>
+                        <th>Nationality</th>
+                        <th>Documents</th>
+                        <th data-orderable="false">Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach(var item in Model){
+                    <tr>
+                        <td>@item.FullName</td>
+                        <td>@item.Email</td>
+                          <td>@item.Contact</td>
+                            <td>@item.Id_Passport</td>
+                         <td>@item.Nationality</td>
+                          <td><img style="height:60px;width:80px;" src="/Documents/@item.Documentss"/></td>
+
+                        <td class="text-center">
+                            <div class='container'>
+                                <div class="text-info" style="width: 50%;">Priority</div>
+                            </div>
+                        </td>
+                            <td class="text-center"><span class="badge bg-info text-white">Active</span></td>
+                        <td class="p-1">
+                            <div class="btn-group">
+                                <button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#upsertModal"  data-id="Id"><i class="mdi mdi-link me-2 text-muted vertical-middle"></i><i class="ri-edit-2-line itemedit"></i> </button>
+                                <form  asp-route-id="Id" method="post" id="user">
+                                    <input hidden  />
+                                    <button class="dropdown-item" type="submit">
+                                        <i class="ri-delete-bin-6-fill  itemdelete">&nbsp;</i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

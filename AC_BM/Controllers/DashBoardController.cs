@@ -6,17 +6,20 @@ namespace AC_BM.Controllers
 {
     public class DashBoardController : Controller
     {
-        private readonly IServiceAbstract _serviceAbstract;
-        public DashBoardController(IServiceAbstract serviceAbstract)
+        public DashBoardController()
         {
-            _serviceAbstract = serviceAbstract;
         }
+        //[Authorize(Roles = "admin")]
 
         //[Authorize/*]*/
         public IActionResult Display()
         {
-            var servicess = _serviceAbstract.List();
-            return View(servicess);
+            return  View();
+        }
+
+        public IActionResult Index()
+        {
+            return View();
         }
     }
 }

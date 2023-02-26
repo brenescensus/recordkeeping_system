@@ -1,131 +1,814 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-@*
-//<section id="Home">
-//    <div class="container-fluid">
+﻿<!DOCTYPE html>
+<html lang="en">
 
-//        <div class="card text-bg-dark ">
-//            <img src="~/Images/corporate/Corporate7.jpg" class="card-img img-fluid" style="height:50vh"  alt="...">
-//  <div class="card-img-overlay text-center">
-//    <h2 class="card-title text-light fw-bolder">AC IMMIGRATION COMPANY</h2>
-//    <p class="card-text text-light">We offer the best Immigartion Services in East  and Central Africa. </p>
-//    <p class="card-text text-light"><small>Our customers are our top priority</small></p>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-//  </div>
-//</div>
-//    </div>
-//</section>*@
- <section class="home" id="home">
-        <div class="homet">
-            <h3>The Best Immigration Company in East and Central Africa</h3>
-@*           //<a href="#" >Read More</a>
-*@        </div>
+    <title>AC_BM</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    </section>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-@*
-    <section class="services" id="service">
-        <div class="heading">
-            <h2>Services We Offer</h2>
-            <h6>The best you can ever get</h6>
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Top Bar ======= -->
+    <div id="topbar" class="fixed-top d-flex align-items-center ">
+        <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+            <div class="contact-info d-flex align-items-center">
+                <i class="bi bi-envelope-fill"></i><a href="mailto:info@agweyucollins.com">info@agweyucollins.com</a>
+                <i class="bi bi-phone-fill phone-icon"></i> +254 721 111 999
+            </div>
+            <div class="cta d-none d-md-block">
+                <a class="scrollto" asp-action="Registration" asp-controller="UserAunthentication">Get Started</a>
+            </div>
         </div>
-        <div class="serveinfo">
-            <div class="col">
-                <img src="~/Images/Corporate/book_pen.jpg" alt="">
-                <div class="layer">
-                <h3>Business & Corporate Planning</h3>
-                </div>
-            </div>
-            <div class="col">
-                <img src="~/Images/Corporate/travel.jpg" alt="">
-                <div class="layer">
-                    <h3>Immigration</h3>
-                </div>
-            </div>
-            <div class="col">
-                <img src="~/Images/Corporate/law.jpg" alt="">
-                <div class="layer">
-                    <h3>Legal Services</h3>
-                </div>
-            </div>
-
-        </div>
-
-    </section>*@
-    <!-- end of portfolio -->
-
-@*<section class="blog" id="blog">
-    @*<div class="heading">
-        <h2>Blog Posts</h2>
-        <h6>News Insights</h6>
-        <P>Best among many.Experience from the best Dev.</P>
     </div>
-    <div class="blog-content">
-        <div class="row">
-            <img src="~/Images/Corporate/book_pen.jpg" alt="">
-            <h3>Corporate and Business Planning</h3>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center ">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <h1 class="logo"><a href="index.html">AC Immigration</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+@*             <a href=index.html" class="logo"><img src="Images/AC_Logo.jpg" alt="" class="img-fluid"></a>-->
+*@             
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="#services">Services</a></li>
+@*                    <li><a class="nav-link scrollto" href="#team">Team</a></li>*@                                
+
+@*<li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>*@
+                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                </ul>  
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
         </div>
-        <div class="row">
-            <img src="~/Images/Corporate/law.jpg" alt="">
+    </header><!-- End Header -->
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex justify-content-center align-items-center">
+        <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
 
-            <h3>Legal services</h3>
+            <!-- Slide 1 --> 
+            <div class="carousel-item active">
+                <div class="carousel-container">
+                    <h2 class="animate__animated animate__fadeInDown">Welcome to <span>AC Immigration</span></h2>
+                    <h6 class="animate__animated animate__fadeInDown"> We are here for you </h6>
+
+                    <p class="animate__animated animate__fadeInUp">We offer quality services to our clients with regards to Immigration,Tax,Mediation,Research and Development,
+                        Citizenship by Investment,Compliance and Corporate services</p>
+                    <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="carousel-container">        
+                    <h2 class="animate__animated animate__fadeInDown"> We are glad to serve you </h2>
+                    <p class="animate__animated animate__fadeInUp">Enjoy consultation  services and unique perspective
+                        from certified mediators,Immigration lawyer</p>
+
+                    <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <div class="carousel-container">
+                    <h2 class="animate__animated animate__fadeInDown">We go beyond client's expections </h2>
+                    <p class="animate__animated animate__fadeInUp">Our Commitment is to the client and what we promise, we deliver<br />
+                            We believe in integrity and honesty which is always  our core goals</p>
+                    <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+            </a>
+
+            <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+            </a>
+
         </div>
-        <div class="row">
-            <img src="Images/Corporate/travel.jpg" alt="">
+    </section><!-- End Hero -->
 
-            <h3>Immigration Services</h3>
+    <main id="main">
+
+        <!-- ======= Icon Boxes Section ======= -->
+        <section id="icon-boxes" class="icon-boxes">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                            <h4 class="title"><a href="">Mediation</a></h4>
+                            <p class="description">We offer resolution to conflicts between disputing parties.
+                            Our mediation process facilitate good communication between the two parties and help them reach a mutual agreement rather than going to court</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-file"></i></div>
+                            <h4 class="title"><a href="">Legal services</a></h4>
+                            <p class="description">Professional assistance and advice  is provided by our team of seasoned lawyer in Immigration law and not limited to criminal law,
+                                intellectual property law,tax law,civil law and corporate law. 
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-tachometer"></i></div>
+                            <h4 class="title"><a href="">Corporate Services</a></h4>
+                            <p class="description">We provide assistance to clients seeking business and corporate services</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-layer"></i></div>
+                            <h4 class="title"><a href="">Immigration</a></h4>
+                            <p class="description"> We offer consultancy on Immigration services .Our Immigration services include Visa application 
+                                ,Citizenship by investment and many more.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Icon Boxes Section -->
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>About Us</h2>
+                    <p>AC Immigration is firm registered under the Companies Act .
+                        It is charged with the responsibility of Immigration(visas,citizenship,permits,passports),Legal,
+                        Corporate(registration,licenses,conversion,cesstion),Mediation,Tax and Citizenship by Investment.
+                        We are powered with knowledge ,driven by ethics and rooted in professionalism.We build on our global networks  and local expertise.
+                       With years of experience and a team of experts,we offer the best customer service.</p>
+                </div>
+
+                <div class="row content">
+                    <div class="col-lg-6">
+                         <h2>Core Values</h2>
+                        <p>
+                            
+                        </p>
+                        <ul>
+                            <li><i class="ri-check-double-line"></i>Integrity</li>
+                            <li><i class="ri-check-double-line"></i>Accountability</li>
+                            <li><i class="ri-check-double-line"></i> Professionalism</li>
+                            <li><i class="ri-check-double-line"></i>Strong Work Ethics</li>
+                            <li><i class="ri-check-double-line"></i> Effective Customer Service</li>
+
+
+                             
+
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0">
+                        <h2>Mission</h2>
+                        <p>
+                            Our mission is to provide our clients with exceptional services,uphold professional & ethical standards. 
+                        </p>
+                        <h2>Vision</h2>
+                        <p> To be the leading global consultancy firm with Sub-Saharan African roots.</p>
+                        <h4>Goals</h4>
+                        <p>Our goal is to connect people and offer client-centered slutions.</p>
+                        <a href="#" class="btn-learn-more">Learn More</a>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End About Us Section -->
+    @*    <!-- ======= Clients Section ======= -->
+        <section id="clients" class="clients">
+            <div class="container" data-aos="zoom-in">
+
+                <div class="clients-slider swiper">
+                    <div class="swiper-wrapper align-items-center">
+                        <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
+                        <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
+                        <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
+                        <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
+                        <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
+                        <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
+                        <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
+                        <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </div>
+        </section><!-- End Clients Section -->*@
+        <!-- ======= Why Us Section ======= -->
+        <section id="why-us" class="why-us">
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-lg-5 align-items-stretch position-relative video-box" style='background-image: url("assets/img/why-us.jpg");' data-aos="fade-right">
+                        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn mb-4"></a>
+                    </div>
+
+                    <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch" data-aos="fade-left">
+
+                        <div class="content">
+                            <h3> <strong>Why Us?</strong></h3>
+                            <p>
+                             With many years of experience,you are guaranteed to receive quality and professional services swiftly.
+                            </p>
+                        </div>
+
+                        <div class="accordion-list">
+                            <ul>
+                                <li data-aos="fade-up" data-aos-delay="100">
+                                    <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span>Good customer service<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                    <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                                        <p>
+                                          We provide exceptional services to our clients.
+
+                                        </p>
+                                    </div>
+                                </li>
+
+                                <li data-aos="fade-up" data-aos-delay="200">
+                                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> Work with you <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                    <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                                        <p>
+                                           We follow up with our clients problems to the very end.Making sure it is to their satisfaction 
+                                        </p>
+                                    </div>
+                                </li>
+
+                                <li data-aos="fade-up" data-aos-delay="300">
+                                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> Quality Services <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                    <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
+                                        <p>
+                                            We work with highly motivated and qualified team to deliver services effectively.
+                                        </p>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Why Us Section -->
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Services</h2>
+@*                    <p>AC Immigration provides our clients with services.</p>
+*@                </div>
+
+                <div class="row">
+                    <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon-box">
+                            <i class="bi bi-card-checklist"></i>
+                            <h4><a href="#">CITIZENSHIP BY INVESTMENT</a></h4>
+                            <p>Individual acquires citizenship of a country by making an investment in that country.
+                                The criteria used in obtaining the citizenship vary by country but must meet a minimum threshhold 
+                                and be made in accordance with the laws of the country offering the citizenship.<br />
+                                The investment can be in form of:
+
+                            </p>
+                                <ul>
+                                 <li>  Real Estate</li>
+                                 <li>  Business Investment</li>
+                                 <li>  Government Bonds</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon-box">
+                            <i class="bi bi-bar-chart"></i>
+                            <h4><a href="#">TAX</a></h4>
+                            <h6>We offer Several tax services</h6>
+                            <ul>
+                                <li>Conduct tax audits</li>
+                                <li>Tax consultancy for expartriates</li>
+                                <li>Comprehensive tax reviews</li>
+                                <li>Corporate tax computations and submissions</li>
+                                <li> Self assessment returns and computations for submission</li>
+                                 <li>File annual tax returns,income tax</li>
+                                 <li>Provide sound withholding tax advisory</li>
+                                 <li>Offer Guidance on VAT registration and deregistration</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon-box">
+                            <i class="bi bi-binoculars"></i>
+                            <h4 class="mb-2"><a href="#">CORPORATE SERVICES</a></h4>
+                            <p>We offer the following services</p>
+                            <ul>
+                                <li>Company registration</li>
+                                <li>Business registration</li>
+                                <li>Registration of foundations</li>
+                                <li>Registration of societies</li>
+                                <li>Cessation of business</li>
+                                <li>Addition of directors to a company</li>
+                                <li>Conversion of business into a company</li>
+                                <li>Registration of Community Based Organisation</li>
+                                <li>Registration of Non Governmental Organistaions(NGOs)</li>
+                                <li>Business license-Tourism REgulatory Authority(TRA).KEBS,KEPHIS,etc</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="400">
+                        <div class="icon-box">
+                            <i class="bi bi-brightness-high"></i>
+                            <h4><a href="#">IMMIGRATION</a></h4>
+                            <p>We assist individuals with immigration process this includes:</p>
+                            <ul>
+                                <li>Visa application</li>
+                                <li>Passports application</li>
+                                <li>Work permits</li>
+                                <li>Pass & permits</li>
+                                <li>Acquring of the second passport</li>
+                            </ul>
+                        </div>
+                    </div>
+                   @* <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="500">
+                        <div class="icon-box">
+                            <i class="bi bi-calendar4-week"></i>
+                            <h4><a href="#">LEGAL SERVICES</a></h4>
+                            <p>We offer the following legal services:</p>
+                            <ul>
+                                <li>Drafting Legal Documents</li>
+                                <li>Advising clients on legal matters</li>
+                            <li>Negotiating settlements</li>
+                            <li>Providing legal support and guidance</li>
+                            
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="600">
+                        <div class="icon-box">
+                            <i class="bi bi-briefcase"></i>
+                            <h4><a href="#">RESEARCH AND DEVELOPMENT</a></h4>
+                            <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+                        </div>
+                    </div>*@
+                </div>
+
+            </div>
+        </section><!-- End Services Section -->
+        <!-- ======= Cta Section ======= -->
+        <section id="cta" class="cta">
+            <div class="container">
+
+                <div class="row" data-aos="zoom-in">
+                    <div class="col-lg-9 text-center text-lg-start">
+                        <h3>Call To Action</h3>
+                        <p> Register now to access our company services...</p>
+                    </div>
+                    <div class="col-lg-3 cta-btn-container text-center">
+                        <a class="cta-btn align-middle" href="UserAunthentication/Registration">Call To Action</a>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Cta Section -->
+        @*<!-- ======= Team Section ======= -->
+        <section id="team" class="team section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Team</h2>
+                    <p>AC IMMIGRSTION  has a team of qualified members to bring you services </p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member d-flex align-items-start">
+                            <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>Collins Agweyu</h4>
+                                <span>Chief Executive Officer</span>
+                                <p> Collins Agweyu is a certified Immigration Lawyer with a bachelors degree in Law from the university of Nairobi<br />
+                                    Agweyu is a certified mediator with experience in Immigration law.<br />He has gained experience from several immigration Company such as HengSheng' group
+                                    ,a certified profession mediator</p>
+                                <div class="social">
+                                    <a href=""><i class="ri-twitter-fill"></i></a>
+                                    <a href=""><i class="ri-facebook-fill"></i></a>
+                                    <a href=""><i class="ri-instagram-fill"></i></a>
+                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
+                        <div class="member d-flex align-items-start">
+                            <div class="pic"><img src="assets/img/team/team-2.jpg" class= "img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>Sarah Jhonson</h4>
+                                <span>Product Manager</span>
+                                <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
+                                <div class="social">
+                                    <a href=""><i class="ri-twitter-fill"></i></a>
+                                    <a href=""><i class="ri-facebook-fill"></i></a>
+                                    <a href=""><i class="ri-instagram-fill"></i></a>
+                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mt-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="member d-flex align-items-start">
+                            <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>William Anderson</h4>
+                                <span>CTO</span>
+                                <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
+                                <div class="social">
+                                    <a href=""><i class="ri-twitter-fill"></i></a>
+                                    <a href=""><i class="ri-facebook-fill"></i></a>
+                                    <a href=""><i class="ri-instagram-fill"></i></a>
+                                     <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mt-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="member d-flex align-items-start">
+                            <div class="pic"><img src="assets/img/team/team-4.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>Amanda Jepson</h4>
+                                <span>Accountant</span>
+                                <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
+                                <div class="social">
+                                    <a href=""><i class="ri-twitter-fill"></i></a>
+                                    <a href=""><i class="ri-facebook-fill"></i></a>
+                                    <a href=""><i class="ri-instagram-fill"></i></a>
+                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Team Section -->*@
+        <@*!-- ======= Pricing Section ======= -->
+        <section id="pricing" class="pricing">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Pricing</h2>
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="box">
+                            <h3>Free</h3>
+                            <h4><sup>$</sup>0<span> / month</span></h4>
+                            <ul>
+                                <li>Aida dere</li>
+                                <li>Nec feugiat nisl</li>
+                                <li>Nulla at volutpat dola</li>
+                                <li class="na">Pharetra massa</li>
+                                <li class="na">Massa ultricies mi</li>
+                            </ul>
+                            <div class="btn-wrap">
+                                <a href="#" class="btn-buy">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+                        <div class="box featured">
+                            <h3>Business</h3>
+                            <h4><sup>$</sup>19<span> / month</span></h4>
+                            <ul>
+                                <li>Aida dere</li>
+                                <li>Nec feugiat nisl</li>
+                                <li>Nulla at volutpat dola</li>
+                                <li>Pharetra massa</li>
+                                <li class="na">Massa ultricies mi</li>
+                            </ul>
+                            <div class="btn-wrap">
+                                <a href="#" class="btn-buy">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
+                        <div class="box">
+                            <h3>Developer</h3>
+                            <h4><sup>$</sup>29<span> / month</span></h4>
+                            <ul>
+                                <li>Aida dere</li>
+                                <li>Nec feugiat nisl</li>
+                                <li>Nulla at volutpat dola</li>
+                                <li>Pharetra massa</li>
+                                <li>Massa ultricies mi</li>
+                            </ul>
+                            <div class="btn-wrap">
+                                <a href="#" class="btn-buy">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+                        <div class="box">
+                            <span class="advanced">Advanced</span>
+                            <h3>Ultimate</h3>
+                            <h4><sup>$</sup>49<span> / month</span></h4>
+                            <ul>
+                                <li>Aida dere</li>
+                                <li>Nec feugiat nisl</li>
+                                <li>Nulla at volutpat dola</li>
+                                <li>Pharetra massa</li>
+                                <li>Massa ultricies mi</li>
+                            </ul>
+                            <div class="btn-wrap">
+                                <a href="#" class="btn-buy">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Pricing Section -->*@
+        <!-- ======= Frequently Asked Questions Section ======= -->
+        <section id="faq" class="faq section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Frequently Asked Questions</h2>
+                </div>
+
+                <div class="faq-list">
+                    <ul>
+                        <li data-aos="fade-up" data-aos="fade-up" data-aos-delay="100">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">How much do your services cost? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                                <p>
+                                    The cost of our services vary from one to another.Reach us to know more.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="200">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">How do I register on your site?
+                                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                                <p>
+                                            To register for our services,click on the get started or the call to action button to register.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="300">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Who can apply for a permanent residence? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                                <p>
+                                    For permanent residence,only the following can apply:<br />Foreign individuals who have worked in Kenya for a specified period of time<br />
+                                    Foreign individuals who have been legally married to Kenyan citizens for at least 3 years.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="400">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">How can I schedule a consultation with you? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                                <p>
+                                    For consultation on any of our services,you can reach us on any social media handles provided in the website.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="500">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Do you need a Visa before leaving for any country <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                                <p>
+                                   You do not require a Visa to every country,they are some countries that you only need a valid passport from your country
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </section><!-- End Frequently Asked Questions Section -->
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Contact Us</h2>
+                </div>
+
+                <div class="row mt-1 d-flex justify-content-end" data-aos="fade-right" data-aos-delay="100">
+
+                    <div class="col-lg-5">
+                        <div class="info">
+                            <div class="address">
+                                <i class="bi bi-geo-alt"></i>
+                                <h4>Location:</h4>
+                                <p>
+                                     Madonna House<br />
+                                     2nd Floor Room 203<br>
+                                     Westlands,Nairobi,Kenya <br>
+                                </p>
+                            </div>
+
+                            <div class="email">
+                                <i class="bi bi-envelope"></i>
+                                <h4>Email:</h4>
+                                <p>info@agweyucollins.com</p>
+                            </div>
+
+                            <div class="phone">
+                                <i class="bi bi-phone"></i>
+                                <h4>Call:</h4>
+                                <p>+254 721 111 999</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="100">
+
+                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6 form-group mt-3 mt-md-0">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                            </div>
+                            <div class="my-3">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                            </div>
+                            <div class="text-center"><button type="submit">Send Message</button></div>
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Contact Section -->
+
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+
+       @* <div class="footer-newsletter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4>Our Newsletter</h4>
+                        <p>Please subscribe to our news letter</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Tax</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Mediation</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Compliance</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Immigration</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Legal Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Corporate Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Research and Development</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Citizenship By Investment</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Business Planning and strategy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h4>Contact Us</h4>
+                        <p>
+                           Madonna House<br>
+                            2nd Floor Room 203<br>
+                            Westlands,Nairobi,Kenya <br><br>
+                            <strong>Phone:</strong> +254 721 111 999<br>
+                            <strong>Email:</strong> info@agweyucollins.com<br>
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-info">
+                        <h3>About AC IMMIGRATION</h3>
+                        <p>We offer the bet services in Sub Saharan Africa.Reach us for further queries</p>
+                        <div class="social-links mt-3">
+                            <a href="https://twitter.com/AgweyuCo" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="https://www.facebook.com/ACimmigrationKE?mibextid=LQQJ4d" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="https://instagram.com/_acimmigration?igshid=YmMyMTA2M2Y=" class="instagram"><i class="bx bxl-instagram"></i></a>
+@*                            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+*@                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
-         
-    </div>
-</section>*@
 
-<section id="service">
-    <h1>Services we offer</h1>
-
-<div class="row mb-2">
-          <div class="col-3 ">
-            <div class="card text-bg-primary h-100">
-                    <img src="images/corporate/travel.jpg" class="card-img opacity-25 " alt="...">
-              <div class="card-img-overlay">
-                <h5 class="card-title text-danger fw-bold text-center pt-10">Immigration</h5>
-                <p class="card-text"></p>
-                 <p class="card-text"><small></small></p>
-               </div>
-             </div>
-           </div>
-
-
-         <div class="col-3 ">
-            <div class="card text-bg-dark h-100">
-        <img src="images/corporate/book_pen.jpg" class="card-img opacity-25 " alt="...">
-       <div class="card-img-overlay">
-         <h5 class="card-title text-danger">Business & Corporate Planning</h5>
-        <p class="card-text"></p>
-       <p class="card-text"><small></small></p>
-  </div>
-</div>
-</div>
-                 <div class="col-3 ">
-            <div class="card text-bg-dark text-center h-100">
-        <img src="images/corporate/law.jpg" class="card-img opacity-15 " alt="...">
-       <div class="card-img-overlay">
-         <h5 class="card-title text-danger pt-30">Legal Services</h5>
-        <p class="card-text"></p>
-       <p class="card-text"><small> </small></p>
-  </div>
-</div>
-</div>
-                     <div class="col-3 ">
-            <div class="card text-bg-dark h-100">
-        <img src="images/corporate/realestate.jpg"class="card-img opacity-15 " alt="...">
-       <div class="card-img-overlay">
-         <h5 class="card-title text-danger fw-bolder ">Conveyance & real Estates</h5>
-        <p class="card-text"></p>
-       <p class="card-text"><small></small></p>
-  </div>
-</div>
-</div>
+        <div class="container">
+            <div class="copyright">
+                &copy;  <span>2023&nbsp;</span><strong><span>AC IMMIGRATION</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+            </div>
         </div>
-           </section>
+    </footer><!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

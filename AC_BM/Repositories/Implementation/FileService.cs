@@ -24,7 +24,7 @@ namespace AC_BM.Repositories.Implementation
                 }
                 return false;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return false;
             }
@@ -60,7 +60,7 @@ namespace AC_BM.Repositories.Implementation
 
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return new Tuple<int, string>(0, "Error while uploading the file");
 

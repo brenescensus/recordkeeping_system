@@ -9,28 +9,30 @@ namespace AC_BM.Models.Domain
         [Key]
         public int Id { get; set; }
         [Required]
-        public string? Name { get; set; }
+        public string? FullName { get; set; }
         [EmailAddress]
         [Required]
         public string? Email { get; set; }
-        public string? Profile { get; set; }
         
         [Required]
-        public int? Contact { get; set; }
+        public string? Contact { get; set; }
         [Required]
-        public int? Id_Passport { get; set; }
-
-        public string? Address { get; set; }
+        public string? Id_Passport { get; set; }
 
         public string? Nationality { get; set; }
 
-        public string? Dependence { get; set; }
+        public string? Service { get; set; }
 
         public string? Documentss { get; set; }
 
         [NotMapped]
         [Required]
-        public IFormFile? DocFile { get; set; }
+        // public IFormFile? DocFile { get; set; }
+        public List<IFormFile> DocFiles { get; set; } 
+
+
+
+
 
 
     }

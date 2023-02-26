@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4 col-md-12 col-sm-12  col-xs-12">
+            <div class="card-counter primary d-flex">
+                <i class="fa-solid fa-list"></i>
+                <div class="ms-auto text-end">
+                    <h5 class="count-numbers" id="card1">PendingProjects</h5>
+                    <span class="count-name">Pending Projects</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12 col-sm-12  col-xs-12">
+            <div class="card-counter danger d-flex">
+                <i class="fa-solid fa-list-check"></i>
+                <div class="ms-auto text-end">
+                    <h5 class="count-numbers" id="card1">CompletedProjects</h5>
+                    <span class="count-name">Completed Projects</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4  col-md-12 col-sm-12 col-xs-12">
+            <div class="card-counter success d-flex">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <div class="ms-auto text-end">
+                    <h5 class="count-numbers" id="card1">UpcomingProjects</h5>
+                    <span class="count-name">Upcoming Projects</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-lg-4  col-md-12 mb-5">
+            <div class="card">
+                <canvas id="myChart" style="width:100%;max-width:600px;height:350px;"></canvas>
+
+            </div>
+        </div>
+        <div class="col-lg-4  col-md-12  mb-5">
+            <div class="card">
+                <canvas id="myDoug" style="width:100%;max-width:1000px;height:350px;"></canvas>
+            </div>
+        </div>
+        <div class="row col-lg-4  col-md-12  mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <p class="fs-6 fw-bold">Recent activity</p>
+                    <ul class="timeline">
+                        <li>
+                            <a target="_blank" href="#" class="timeline-title">Title</a>
+                            <a href="#" class="timeline-date ms-4">DateUpdated</a>
+                            <p class="timeline-content">DSDSD
+                        </li>
+                        <li>
+                            <h4>No recent Activities</h4>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

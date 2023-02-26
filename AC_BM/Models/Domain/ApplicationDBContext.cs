@@ -11,9 +11,7 @@ namespace AC_BM.Models.Domain
 
 
         public DbSet<User> Client { get; set; }
-        public DbSet<Company> Companys { get; set; }
-        public DbSet<CompanyService> CompanyService { get; set; }
-        public DbSet<Service> Services { get; set; }
+       
 
 
 }

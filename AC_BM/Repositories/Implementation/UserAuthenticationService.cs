@@ -2,6 +2,7 @@
 using AC_BM.Models;
 using AC_BM.Models.Domain;
 using AC_BM.Models.DTO;
+using AC_BM.Models.ViewModels;
 using AC_BM.Repositories.Abstract;
 using Microsoft.AspNetCore.Identity;
 
@@ -61,7 +62,7 @@ namespace AC_BM.Repositories.Implementation
             else
             {
                 Status.StatusCode = 0;
-                Status.Message = "Error on logginng in";
+                Status.Message = "Error on logging in";
                 return Status;
             }
         }
@@ -95,10 +96,10 @@ namespace AC_BM.Repositories.Implementation
                 Status.StatusCode = 0;
                 Status.Message = "User Registration failed";
                 return Status;
-
-
             }
-            //ROLE MANAGEMENT
+
+           
+                //ROLE MANAGEMENT
             if (!await roleManager.RoleExistsAsync(model.Role))
                 await roleManager.CreateAsync(new IdentityRole(model.Role));
 
@@ -110,5 +111,10 @@ namespace AC_BM.Repositories.Implementation
             Status.Message = "User has been registered successfully";
             return Status;
         }
+
+       
+
+       
+        
     }
 }

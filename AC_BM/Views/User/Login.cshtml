@@ -1,27 +1,35 @@
 ﻿@model AC_BM.Models.ViewModels.UserVM
 
 @{
-    ViewData["Title"] = "REGISTER";
-    Layout = "~/Views/Shared/_AdminMasterLayout.cshtml";
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_AuthLayout.cshtml";
 }
 
-<div class="col-6 d-flex justify-content-center">
-    <form method="post" asp-action="Index" asp-controller="Admin">
-        <div asp-validation-summary="All"></div>
-        <div class="mb-1">
-            <label asp-for="Email" class="form-label"></label>
-            <div><i class="bi bi-envelope"></i></div>
-            <input asp-for="Email" class="form-control" type="email" />
-            <span asp-validation-for="Email" class="text-danger"></span>
-        </div>
-        <div class="mb-1">
-            <label asp-for="Password" class="form-label"></label>
-            <input asp-for="Password" class="form-control" type="password" />
-            <span asp-validation-for="Password" class="text-danger"></span>
-        </div>
-        <button class="btn btn-primary" type="submit" asp-controller="Admin" asp-action="Index"> &nbsp;Login</button>
-    </form>
+<div class="logo d-flex justify-content-center flex-column">
+    <img src="~/Images/AC_Logo.jpg" />
+    <p>Heading goes here...</p>
 </div>
+
+<form method="post">
+    <div class="form-group">
+        <input asp-for="Email" class="form-control" type="text" placeholder="UserName/Email" />
+        <ion-icon name="person-outline"></ion-icon>
+        <span class="text-danger" asp-validation-for="Email"></span>
+    </div>
+
+    <div class="form-group">
+        <input asp-for="Password" class="form-control" type="password" placeholder="Password" />
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <span class="text-danger" asp-validation-for="Password"></span>
+    </div>
+
+    <div class="remember">
+        <label> <input type="checkbox" /> Remember Me</label>
+        <a href="#">Forgot Password?</a>
+    </div>
+    <button type="submit" class="btn primary w-100">Sign In</button>
+    <p class="noAcc">Don’t have account ? <a asp-action="Register"> Register as new member</a></p>
+</form>
 @section Scripts{
     @{
         <partial name="_ValidationScriptsPartial" />

@@ -94,62 +94,6 @@ namespace ACBM.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("AC_BM.Models.Domain.Company", b =>
-                {
-                    b.Property<int>("CompanyId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CompanyId"));
-
-                    b.Property<string>("CompanyName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("CompanyId");
-
-                    b.ToTable("Companys");
-                });
-
-            modelBuilder.Entity("AC_BM.Models.Domain.CompanyService", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CompanyId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ServiceId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("CompanyService");
-                });
-
-            modelBuilder.Entity("AC_BM.Models.Domain.Service", b =>
-                {
-                    b.Property<int>("ServiceId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ServiceId"));
-
-                    b.Property<string>("ServiceImage")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ServiceName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ServiceId");
-
-                    b.ToTable("Services");
-                });
-
             modelBuilder.Entity("AC_BM.Models.Domain.User", b =>
                 {
                     b.Property<int>("Id")
@@ -158,14 +102,8 @@ namespace ACBM.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("Contact")
+                    b.Property<string>("Contact")
                         .IsRequired()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Dependence")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Documentss")
@@ -175,18 +113,18 @@ namespace ACBM.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Id_Passport")
+                    b.Property<string>("FullName")
                         .IsRequired()
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Id_Passport")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nationality")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Profile")
+                    b.Property<string>("Service")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

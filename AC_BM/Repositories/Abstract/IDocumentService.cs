@@ -1,9 +1,12 @@
-﻿namespace AC_BM.Repositories.Abstract
+﻿
+namespace AC_BM.Repositories.Abstract
 {
     public interface IDocumentService
     {
-        public Tuple<int, string> SaveDoc(IFormFile docfile);
+       // public Tuple<int, string> SaveDoc(IFormFile docfile);
 
-        public bool DeleteDoc(string DocFileName); 
+        public bool DeleteDoc(string DocFileName);
+
+        public bool SaveDocument(List<IFormFile> DocFiles);
     }
 }

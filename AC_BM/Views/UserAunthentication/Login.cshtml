@@ -1,36 +1,36 @@
 ﻿@model AC_BM.Models.DTO.LoginModel
+
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_AuthLayout.cshtml";
 }
-    <meta name="viewport" content="width=device-width" />
 
- <div class="wrapper">
-        <div class="title">Login Form</div>
-    <form class="form" method="post" asp-controller="UserAunthentication" asp-action="Login">
-        <div asp-validation-summary="All" class="error"></div>
-    <div class="input_field">
-            <label asp-for="Username"></label>
-            <input asp-for="Username" class="input" type="text" />
-            <span asp-validation-for="Username" class="error"></span>
+<div class="">
+    <div class="logo d-flex justify-content-center flex-column">
+        <img src="~/Images/AC_Logo.jpg" />
+        <p>Heading goes here S...</p>
     </div>
-    <div class="input_field">
-            <label asp-for="Password" ></label>
-        <input asp-for="Password" class="input" type="password" />
-        <span asp-validation-for="Password" class="error"></span>
-    </div>
-    @if(TempData["msg"]!=null){
-        <div class="text-success">
-            @TempData["msg"]
+
+    <form method="post"  asp-action="Login" asp-controller="UserAunthentication">
+        <div class="form-group">
+            <input asp-for="Username" class="form-control" type="text" placeholder="UserName" />
+            <ion-icon name="person-outline"></ion-icon>
+            <span class="text-danger pt-1 font-monospace fw-normal" asp-validation-for="Username"></span>
         </div>
-    }
-      <button  class="btn" type="submit" asp-controller="UserAunthentication" asp-action="Login"> &nbsp;Login</button>
-      <p>Do not have an account?</p>
-      <a asp-action="Registration" asp-controller="UserAunthentication">Register</a>
-</form>
-</div>
-@section Scripts{
-    @{
-        //<partial name="_ValidationScriptsPartial" />
-    }
 
-}
+        <div class="form-group">
+            <input asp-for="Password" class="form-control" type="password" placeholder="Password" />
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <span class="text-danger font-monospace fw-normal pt-1" asp-validation-for="Password"></span>
+        </div>
+
+        <div class="remember mb-3">
+            <label> <input  type="checkbox" /> Remember Me</label>
+            <a href="#">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn primary w-100">Sign In</button>
+        <p class="noAcc">Don’t have account ? <a asp-action="Registration"> Register as new member</a></p>
+    </form>
+
+</div>
+

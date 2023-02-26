@@ -1,61 +1,48 @@
 ﻿@model AC_BM.Models.DTO.RegistrationModel
 @{
-
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_AuthLayout.cshtml";
 }
-    <meta name="viewport" content="width=device-width" />
-<div class="wrapper"> 
-    
-    <div class="title"> Registration form</div>
 
-    <form class="form" method="post">
+<div class="">
+    <div class="logo d-flex justify-content-center flex-column">
+        <img src="~/Images/AC_Logo.jpg" />
+        <p>Heading goes here S...</p>
+    </div>
+<form method="post" asp-action="Registration" asp-controller="UserAunthentication">
+    <div class="form-group">
+        <ion-icon name="person-outline"></ion-icon>
+        <input class="form-control" asp-for="Name" type="text" placeholder="FullName" />
+        <span class="text-danger font-monospace fw-normal pt-1" asp-validation-for="Username"></span>
+    </div>
 
-           <div class="input_field">
-                    <label asp-for="Name"></label>
-                    <input asp-for="Name" class="input" type="text" />
-                    <span asp-validation-for="Name"class="text-danger"></span>
-           </div>
-             <div class="input_field">
-                        <label asp-for="Username" ></label>
-                        <input asp-for="Username" class="input" type="text" />
-                        <span asp-validation-for="Username" class="text-danger"></span>
-             </div>
-                    <div class="input_field">
-                        <label asp-for="Email" ></label>
-                        <input asp-for="Email" class="input" type="email" />
-                        <span asp-validation-for="Email" class="text-danger"></span>
-                    </div>
-                <div class="input_field">
-                        <label asp-for="Password" ></label>
-                        <input asp-for="Password" class="input" type="password" />
-                        <span asp-validation-for="Password" class="text-danger"></span>
-                    </div>
-                <div class="input_field">
-                        <label asp-for="PasswordConfirm" ></label>
-                        <input asp-for="PasswordConfirm" class="input" type="password" />
-                        <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
-                    
-                 </div>
-                   @if(TempData["msg"]!=null){
+    <div class="form-group">
+        <input class="form-control" asp-for="Email" type="text" placeholder="Email" />
+        <ion-icon name="mail-outline"></ion-icon>
+            <span class="text-danger font-monospace fw-normal pt-1" asp-validation-for="Email"></span>
+    </div>
 
-                   <div class="text-success">
-                     @TempData["msg"]
-                   </div>
-                   }
-                <button class="btn" type="submit"  asp-controller="UserAunthentication" asp-action="Registration">Register</button>
-                <p>Already have an account?</p>
-                <a asp-action="Login" asp-controller="UserAunthentication" >Login</a>
+    <div class="form-group">
+        <ion-icon name="person-outline"></ion-icon>
+        <input class="form-control" asp-for="Username" type="text" placeholder="UserName" />
+        <span class="text-danger font-monospace fw-normal pt-1" asp-validation-for="Username"></span>
+    </div>
 
-                   @*<button type="submit" asp-controller="UserAunthentication" asp-action="Registration"> &nbsp;Register </button>*@
+    <div class="form-group">
+        <input class="form-control" asp-for="Password" type="password" placeholder="Password" />
+        <ion-icon name="lock-closed-outline"></ion-icon>
+            <span class="text-danger font-monospace fw-normal pt-1" asp-validation-for="Password"></span>
+    </div>
 
-     
-                  
-     </form>
-           
-          
+    <div class="form-group">
+        <input class="form-control" asp-for="PasswordConfirm" type="password" placeholder="Confirm Password" />
+        <ion-icon name="lock-open-outline"></ion-icon>
+            <span class="text-danger font-monospace fw-normal pt-1" asp-validation-for="PasswordConfirm"></span>
+    </div>
 
 
+    <button class="btn primary w-100" type="submit">Sign Up</button>
+    <p class="noAcc">Already have an account ? <a asp-action="Login"> Login </a></p>
+
+</form>
 </div>
-        
-    
-

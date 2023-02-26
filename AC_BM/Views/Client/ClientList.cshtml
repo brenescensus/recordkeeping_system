@@ -1,40 +1,78 @@
 ﻿@model IEnumerable<AC_BM.Models.Domain.User>
+
+
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Users";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
-    <div class="table-container">
-    <h1  > Client</h1>
-
-    <table class="table">
-    <tr>
-    <th>FullName</th>
-    <th>Email</th>
-    <th>Contact</th>
-    <th>Id/Passport</th>
-    <th>Address</th>
-    <th>Nationality</th>
-    <th>Dependence</th>
-    <th>Documents</th>
-    </tr>
-    @foreach(var item in Model){
-    <tr>
-    <td>@item.Name</td>
-    <td>@item.Email</td>
-    <td>@item.Contact</td>
-    <td>@item.Id_Passport</td>
-    <td>@item.Address</td>
-    <td>@item.Nationality</td>
-    <td>@item.Dependence</td>
-    <td><img style="height:60px;width:80px;" src="/Documents/@item.Documentss"/></td>
-    
-    <td>
-      <a href="/Client/Edit?id=@item.Id" class="btn btn-default"><i class="bi bi-pencil-square"></i>&nbsp; </a>
-      <a onclick="return window.confirm('Are you Sure you want to delete this client's details?')" href="/Client/Delete?id=@item.Id" class="btn btn-danger"><i class="bi bi-trash"></i></a>
-    </td>
-
-    </tr>}
-    </table>
-    <div class="input-container">
-    <a href="/Client/ClientList" class="btn btn-sec">Back</a>
+<div class="row border g-0 rounded shadow-sm bg-white">
+    <div class="row">
+        <div class="row d-flex flex-row-reverse">
+            <div class="col-lg-2 mx-3">
+                <button class="btn btn-primary primary btn-md mt-3 ms-lg-2" type="button" data-bs-toggle="modal" data-url="/Task/ModalTask" data-id="add" data-bs-target="#upsertModal">
+                    <i class="ri-add-fill"></i>&nbsp; Users
+                </button>
+            </div>
+            <div class="col-lg-2">
+                <input type="text" name="SearchString" class="form-control mt-3" id="searchdata" placeholder="&#xF002; Search user">
+            </div>
+        </div>
     </div>
-   </div>
+    <div class="col p-3">
+        <div class="table-responsive ">
+            <table id="availabletask" class="row-border " style="width:100%">
+                <thead class="taskhead">
+                    <tr>
+                        <th>FullName</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Id/Passport</th>
+                        <th>Nationality</th>
+                        <th>Service</th>
+                        <th data-orderable="false">Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.FullName</td>
+                            <td>@item.Email</td>
+                            <td>@item.Contact</td>
+                            <td>@item.Id_Passport</td>
+                            <td>@item.Nationality</td>
+                            <td>@item.Service</td>
+                            <td>
+                                <a href="/Client/Edit?id=@item.Id" class="icon btn-danger-outline"><ion-icon name="pencil-outline"></ion-icon>&nbsp; </a>
+                                <a onclick="return window.confirm('Are you Sure you want to delete this client's details?')" href="/Client/Delete?id=@item.Id" class="icon btn-danger-outline"><ion-icon name="trash-bin-outline"></ion-icon></a>
+
+                              
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
